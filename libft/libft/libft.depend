@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
+	"libft.h"
+
+1607982900 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+
+1607986447 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
+	"libft.h"
+	<stdio.h>
+	<string.h>
+
+1607983122 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strcpy.c
+	"libft.h"
+
