@@ -195,7 +195,7 @@ void	test_ft_memccpy()
 	char memccpy_test4[] = "X KO";//sudden stop check
 	char memccpy_test5[] = "";//empty string check
 	char memccpy_test_dest0[50] = {"                                                  "};
-	char memccpy_test_dest1[50] = {"                               \0                   "};
+	char memccpy_test_dest1[51] = {"                               \0                   "};
 	char memccpy_test_dest2[50] = {"            \0                                     "};
 	char memccpy_test_dest3[50] = {"                                                  "};
 	char memccpy_test_dest4[50] = {" \0                                                "};
@@ -207,7 +207,7 @@ void	test_ft_memccpy()
 	char memccpy_control4[] = "X KO";
 	char memccpy_control5[] = "";
 	char memccpy_control_dest0[50] = {"                                                  "};
-	char memccpy_control_dest1[50] = {"                               \0                   "};
+	char memccpy_control_dest1[51] = {"                               \0                   "};
 	char memccpy_control_dest2[50] = {"            \0                                     "};
 	char memccpy_control_dest3[50] = {"                                                  "};
 	char memccpy_control_dest4[50] = {" \0                                                "};
@@ -253,7 +253,7 @@ void	test_ft_memccpy()
 		printf("issue detected on test 2 (dest,\"Sp\\necc\\bia\\vlX KO\",88,16): special char check\n");
 		diff=1;}
 	if(strcmp(memccpy_control_dest3,memccpy_test_dest3) != 0){
-		printf("issue detected on test 3 (dest,\"Termi\0nateX KO\",88,15): NULL char check\n");
+		printf("issue detected on test 3 (dest,\"Termi\\0nateX KO\",88,15): NULL char check\n");
 		diff=1;}
 	if(strcmp(memccpy_control_dest4,memccpy_test_dest4) != 0){
 		printf("issue detected on test 4 (dest,\"X KO\",88,5): sudden stop check\n");
@@ -340,11 +340,7 @@ int		main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		if (strcmp(av[1], "strlen") == 0 || strcmp(av[1], "ft_strlen") == 0)
-			test_ft_strlen();
-		else if (strcmp(av[1], "strcpy") == 0 || strcmp(av[1], "ft_strcpy") == 0)
-			test_ft_strcpy();
-		else if (strcmp(av[1], "memset") == 0 || strcmp(av[1], "ft_memset") == 0)
+		if (strcmp(av[1], "memset") == 0 || strcmp(av[1], "ft_memset") == 0)
 			test_ft_memset();
 		else if (strcmp(av[1], "bzero") == 0 || strcmp(av[1], "ft_bzero") == 0)
 			test_ft_bzero();
@@ -352,6 +348,10 @@ int		main(int ac, char **av)
 			test_ft_memcpy();
 		else if (strcmp(av[1], "memccpy") == 0 || strcmp(av[1], "ft_memccpy") == 0)
 			test_ft_memccpy();
+		else if (strcmp(av[1], "strlen") == 0 || strcmp(av[1], "ft_strlen") == 0)
+			test_ft_strlen();
+		else if (strcmp(av[1], "strcpy") == 0 || strcmp(av[1], "ft_strcpy") == 0)
+			test_ft_strcpy();
 	}
 	return (0);
 }
