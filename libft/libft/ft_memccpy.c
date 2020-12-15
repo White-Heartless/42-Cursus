@@ -12,9 +12,13 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	destination = (unsigned char*)dest;
 	source = (const unsigned char*)src;
-	while (n-- && *source != (unsigned char)c)
+	while (n--)
 		*destination++ = *source++;
 	if (n > 0 && *source == (unsigned char)c)
-		*destination = *source;
+	{
+		*destination++ = *source;
+		return (destination);
+	}
+
 	return (dest);
 }
