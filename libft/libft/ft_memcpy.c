@@ -3,6 +3,9 @@
 // Copies n characters from memory area source to
 // memory area dest
 
+// will generate issues if the memory blocks overlap.
+// memmove solves this issue
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*destination;
