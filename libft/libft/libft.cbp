@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strlen" />
+				<Option parameters="strcpy" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
