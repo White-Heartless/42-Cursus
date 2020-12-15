@@ -1,7 +1,7 @@
 #include "libft.h"
 
 // Copies n characters from memory area source to
-// memory are dest
+// memory area dest
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
