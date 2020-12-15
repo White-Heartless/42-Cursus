@@ -126,7 +126,7 @@ void	test_ft_bzero()
 }
 void	test_ft_memcpy()
 {
-	char TEST_NAME[] = "ft_memcpy test 1.0";
+	char TEST_NAME[] = "ft_memcpy test 1.1";
 	int diff = 0;
 
 	char memcpy_test0[] = "Just a regular old string here";//standard check
@@ -151,10 +151,10 @@ void	test_ft_memcpy()
 	memcpy(memcpy_control_dest2,memcpy_control2,11);
 	memcpy(memcpy_control_dest3,memcpy_control3,1);
 
-	ft_memcpy(memcpy_test_dest0,memcpy_test0,31);
-	ft_memcpy(memcpy_test_dest1,memcpy_test1,12);
-	ft_memcpy(memcpy_test_dest2,memcpy_test2,11);
-	ft_memcpy(memcpy_test_dest3,memcpy_test3,1);
+	char *return_test0 = ft_memcpy(memcpy_test_dest0,memcpy_test0,31);
+	char *return_test1 = ft_memcpy(memcpy_test_dest1,memcpy_test1,12);
+	char *return_test2 = ft_memcpy(memcpy_test_dest2,memcpy_test2,11);
+	char *return_test3 = ft_memcpy(memcpy_test_dest3,memcpy_test3,1);
 
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (memcpy)\n");
@@ -163,10 +163,10 @@ void	test_ft_memcpy()
 	printf("test2: %s%c%c%c%c%c \n",memcpy_control_dest2,memcpy_control_dest2[5],memcpy_control_dest2[6],memcpy_control_dest2[7],memcpy_control_dest2[8],memcpy_control_dest2[9]);
 	printf("test3: %s\n\n",memcpy_control_dest3);
 	printf("ACTUAL RESULT   (ft_memcpy)\n");
-	printf("test0: %s \n",memcpy_test_dest0);
-	printf("test1: %s \n",memcpy_test_dest1);
-	printf("test2: %s%c%c%c%c%c \n",memcpy_test_dest2,memcpy_test_dest2[5],memcpy_test_dest2[6],memcpy_test_dest2[7],memcpy_test_dest2[8],memcpy_test_dest2[9]);
-	printf("test3: %s \n",memcpy_test_dest3);
+	printf("test0: %s \n",return_test0);
+	printf("test1: %s \n",return_test1);
+	printf("test2: %s%c%c%c%c%c \n",return_test2,return_test2[5],return_test2[6],return_test2[7],return_test2[8],return_test2[9]);
+	printf("test3: %s \n",return_test3);
 
 	if(strcmp(memcpy_control_dest0,memcpy_test_dest0) != 0){
 		printf("issue detected on test 0 (dest,\"Just a regular old string here\",31): standard check, nothing special\n");
@@ -183,82 +183,152 @@ void	test_ft_memcpy()
 	if(diff==0)
 		printf("\nNo issue detected, Good Job!\n");
 }
+void	test_ft_memmove()
+{
+	char TEST_NAME[] = "ft_memmove test 1.0";
+	int diff = 0;
+
+	char memmove_test0[] = "Just a regular old string here";//standard check
+	char memmove_test1[] = "Sp\necc\bia\vl";//special char check
+	char memmove_test2[] = "Termi\0nate";//NULL char check
+	char memmove_test3[] = "";//empty string check
+	char memmove_test4[] = "0,1,2,3,4,5,6,7,8,9";//overlapping memory check
+	char memmove_test_dest0[50] = {"                                                  "};
+	char memmove_test_dest1[50] = {"                                                  "};
+	char memmove_test_dest2[50] = {"                                                  "};
+	char memmove_test_dest3[50] = {"                                                  "};
+	char *memmove_test_dest4 = &memmove_test4[10];
+	char memmove_control0[] = "Just a regular old string here";
+	char memmove_control1[] = "Sp\necc\bia\vl";
+	char memmove_control2[] = "Termi\0nate";
+	char memmove_control3[] = "";
+	char memmove_control4[] = "0,1,2,3,4,5,6,7,8,9";
+	char memmove_control_dest0[50] = {"                                                  "};
+	char memmove_control_dest1[50] = {"                                                  "};
+	char memmove_control_dest2[50] = {"                                                  "};
+	char memmove_control_dest3[50] = {"                                                  "};
+	char *memmove_control_dest4 = &memmove_control4[10];
+
+	memmove(memmove_control_dest0,memmove_control0,31);
+	memmove(memmove_control_dest1,memmove_control1,12);
+	memmove(memmove_control_dest2,memmove_control2,11);
+	memmove(memmove_control_dest3,memmove_control3,1);
+	memmove(memmove_control_dest4,memmove_control4,10);
+
+	char *return_test0 = ft_memmove(memmove_test_dest0,memmove_test0,31);
+	char *return_test1 = ft_memmove(memmove_test_dest1,memmove_test1,12);
+	char *return_test2 = ft_memmove(memmove_test_dest2,memmove_test2,11);
+	char *return_test3 = ft_memmove(memmove_test_dest3,memmove_test3,1);
+	char *return_test4 = ft_memmove(memmove_test_dest4,memmove_test4,10);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (memmove)\n");
+	printf("test0: %s \n",memmove_control_dest0);
+	printf("test1: %s \n",memmove_control_dest1);
+	printf("test2: %s%c%c%c%c%c \n",memmove_control_dest2,memmove_control_dest2[5],memmove_control_dest2[6],memmove_control_dest2[7],memmove_control_dest2[8],memmove_control_dest2[9]);
+	printf("test3: %s \n",memmove_control_dest3);
+	printf("test4: %s\n\n",memmove_control_dest4);
+	printf("ACTUAL RESULT   (ft_memmove)\n");
+	printf("test0: %s \n",return_test0);
+	printf("test1: %s \n",return_test1);
+	printf("test2: %s%c%c%c%c%c \n",return_test2,return_test2[5],return_test2[6],return_test2[7],return_test2[8],return_test2[9]);
+	printf("test3: %s \n",return_test3);
+	printf("test4: %s \n",memmove_test_dest4);
+
+	if(strcmp(memmove_control_dest0,memmove_test_dest0) != 0){
+		printf("issue detected on test 0 (dest,\"Just a regular old string here\",31): standard check, nothing special\n");
+		diff=1;}
+	if(strcmp(memmove_control_dest1,memmove_test_dest1) != 0){
+		printf("issue detected on test 1 (dest,\"Sp\\necc\\bia\\vl\",11): special char check\n");
+		diff=1;}
+	if(strcmp(memmove_control_dest2,memmove_test_dest2) != 0){
+		printf("issue detected on test 2 (dest,\"Termi\\0nate\",11): NULL char check\n");
+		diff=1;}
+	if(strcmp(memmove_control_dest3,memmove_test_dest3) != 0){
+		printf("issue detected on test 3 (dest,\"\",1): empty string check\n");
+		diff=1;}
+	if(strcmp(memmove_control_dest4,memmove_test_dest4) != 0){
+		printf("issue detected on test 4 (dest,\"\",1): overlapping memory check\n");
+		diff=1;}
+	if(diff==0)
+		printf("\nNo issue detected, Good Job!\n");
+}
 void	test_ft_memccpy()
 {
-	char TEST_NAME[] = "ft_memccpy test 1.0";
+	char TEST_NAME[] = "ft_memccpy test 1.1";
 	int diff = 0;
 
 	char memccpy_test0[] = "Just a regular old string here";//standard check
-	char memccpy_test1[] = "Just a regular old string hereX KO";//standard check with stop
-	char memccpy_test2[] = "Sp\necc\bia\vlX KO";//special char check
-	char memccpy_test3[] = "Termi\0nateX KO";//NULL char check
-	char memccpy_test4[] = "X KO";//sudden stop check
+	char memccpy_test1[] = "Just a regular old string hereXKO";//standard check with stop
+	char memccpy_test2[] = "Sp\necc\bia\vlXKO";//special char check
+	char memccpy_test3[] = "Termi\0nateXKO";//NULL char check
+	char memccpy_test4[] = "XKO";//sudden stop check
 	char memccpy_test5[] = "";//empty string check
 	char memccpy_test_dest0[50] = {"                                                  "};
 	char memccpy_test_dest1[51] = {"                               \0                   "};
 	char memccpy_test_dest2[50] = {"            \0                                     "};
-	char memccpy_test_dest3[50] = {"                                                  "};
+	char memccpy_test_dest3[50] = {"           \0                                      "};
 	char memccpy_test_dest4[50] = {" \0                                                "};
-	char memccpy_test_dest5[50] = {"                                                  "};
+	char memccpy_test_dest5[50] = {" \0                                                "};
 	char memccpy_control0[] = "Just a regular old string here";
-	char memccpy_control1[] = "Just a regular old string hereX KO";
-	char memccpy_control2[] = "Sp\necc\bia\vlX KO";
-	char memccpy_control3[] = "Termi\0nateX KO";
-	char memccpy_control4[] = "X KO";
+	char memccpy_control1[] = "Just a regular old string hereXKO";
+	char memccpy_control2[] = "Sp\necc\bia\vlXKO";
+	char memccpy_control3[] = "Termi\0nateXKO";
+	char memccpy_control4[] = "XKO";
 	char memccpy_control5[] = "";
 	char memccpy_control_dest0[50] = {"                                                  "};
 	char memccpy_control_dest1[51] = {"                               \0                   "};
 	char memccpy_control_dest2[50] = {"            \0                                     "};
-	char memccpy_control_dest3[50] = {"                                                  "};
+	char memccpy_control_dest3[50] = {"           \0                                      "};
 	char memccpy_control_dest4[50] = {" \0                                                "};
-	char memccpy_control_dest5[50] = {"                                                  "};
+	char memccpy_control_dest5[50] = {" \0                                                "};
 
-	memccpy(memccpy_control_dest0,memccpy_control0,88,31);
-	memccpy(memccpy_control_dest1,memccpy_control1,88,35);
-	memccpy(memccpy_control_dest2,memccpy_control2,88,16);
-	memccpy(memccpy_control_dest3,memccpy_control3,88,15);
-	memccpy(memccpy_control_dest4,memccpy_control4,88,5);
-	memccpy(memccpy_control_dest5,memccpy_control5,88,1);
+	char *return_control0 = memccpy(memccpy_control_dest0,memccpy_control0,88,31);
+	char *return_control1 = memccpy(memccpy_control_dest1,memccpy_control1,88,34);
+	char *return_control2 = memccpy(memccpy_control_dest2,memccpy_control2,88,15);
+	char *return_control3 = memccpy(memccpy_control_dest3,memccpy_control3,88,14);
+	char *return_control4 = memccpy(memccpy_control_dest4,memccpy_control4,88,4);
+	char *return_control5 = memccpy(memccpy_control_dest5,memccpy_control5,88,1);
 
-	ft_memccpy(memccpy_test_dest0,memccpy_test0,88,31);
-	ft_memccpy(memccpy_test_dest1,memccpy_test1,88,35);
-	ft_memccpy(memccpy_test_dest2,memccpy_test2,88,16);
-	ft_memccpy(memccpy_test_dest3,memccpy_test3,88,15);
-	ft_memccpy(memccpy_test_dest4,memccpy_test4,88,5);
-	ft_memccpy(memccpy_test_dest5,memccpy_test5,88,1);
+	char *return_test0 = ft_memccpy(memccpy_test_dest0,memccpy_test0,88,31);
+	char *return_test1 = ft_memccpy(memccpy_test_dest1,memccpy_test1,88,34);
+	char *return_test2 = ft_memccpy(memccpy_test_dest2,memccpy_test2,88,15);
+	char *return_test3 = ft_memccpy(memccpy_test_dest3,memccpy_test3,88,14);
+	char *return_test4 = ft_memccpy(memccpy_test_dest4,memccpy_test4,88,4);
+	char *return_test5 = ft_memccpy(memccpy_test_dest5,memccpy_test5,88,1);
 
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (memccpy)\n");
-	printf("test0: %s \n",memccpy_control_dest0);
-	printf("test1: %s \n",memccpy_control_dest1);
-	printf("test2: %s \n",memccpy_control_dest2);
-	printf("test3: %s%c%c%c%c%c \n",memccpy_control_dest3,memccpy_control_dest3[5],memccpy_control_dest3[6],memccpy_control_dest3[7],memccpy_control_dest3[8],memccpy_control_dest3[9]);
-	printf("test4: %s \n",memccpy_control_dest4);
-	printf("test5: %s\n\n",memccpy_control_dest5);
+	printf("test0: %s    return value: %s\n",memccpy_control_dest0,return_control0);
+	printf("test1: %s   return value: %d\n",memccpy_control_dest1,*return_control1);
+	printf("test2: %s                                  return value: %d\n",memccpy_control_dest2,*return_control2);
+	printf("test3: %s%c%c%c%c%c                        return value: %d\n",memccpy_control_dest3,memccpy_control_dest3[5],memccpy_control_dest3[6],memccpy_control_dest3[7],memccpy_control_dest3[8],memccpy_control_dest3[9],*return_control3);
+	printf("test4: %s                                 return value: %d\n",memccpy_control_dest4,*return_control4);
+	printf("test5: %s                                  return value: %s\n\n",memccpy_control_dest5,return_control5);
 	printf("ACTUAL RESULT   (ft_memccpy)\n");
-	printf("test0: %s \n",memccpy_test_dest0);
-	printf("test1: %s \n",memccpy_test_dest1);
-	printf("test2: %s \n",memccpy_test_dest2);
-	printf("test3: %s%c%c%c%c%c \n",memccpy_test_dest3,memccpy_test_dest3[5],memccpy_test_dest3[6],memccpy_test_dest3[7],memccpy_test_dest3[8],memccpy_test_dest3[9]);
-	printf("test4: %s \n",memccpy_test_dest4);
-	printf("test5: %s \n",memccpy_test_dest5);
+	printf("test0: %s    return value: %s\n",memccpy_test_dest0,return_test0);
+	printf("test1: %s   return value: %d\n",memccpy_test_dest1,*return_test1);
+	printf("test2: %s                                  return value: %d\n",memccpy_test_dest2,*return_test2);
+	printf("test3: %s%c%c%c%c%c                        return value: %d\n",memccpy_test_dest3,memccpy_test_dest3[5],memccpy_test_dest3[6],memccpy_test_dest3[7],memccpy_test_dest3[8],memccpy_test_dest3[9],*return_test3);
+	printf("test4: %s                                 return value: %d\n",memccpy_test_dest4,*return_test4);
+	printf("test5: %s                                  return value: %s\n",memccpy_test_dest5,return_test5);
 
-	if(strcmp(memccpy_control_dest0,memccpy_test_dest0) != 0){
+	if(strcmp(memccpy_control_dest0,memccpy_test_dest0) != 0 || return_control0 != return_test0){
 		printf("issue detected on test 0 (dest,\"Just a regular old string here\",88,31): standard check, nothing special\n");
 		diff=1;}
-	if(strcmp(memccpy_control_dest1,memccpy_test_dest1) != 0){
+	if(strcmp(memccpy_control_dest1,memccpy_test_dest1) != 0 || *return_control1 != *return_test1){
 		printf("issue detected on test 1 (dest,\"Just a regular old string hereX KO\",88,35): standard check with stop\n");
 		diff=1;}
-	if(strcmp(memccpy_control_dest2,memccpy_test_dest2) != 0){
+	if(strcmp(memccpy_control_dest2,memccpy_test_dest2) != 0 || *return_control2 != *return_test2){
 		printf("issue detected on test 2 (dest,\"Sp\\necc\\bia\\vlX KO\",88,16): special char check\n");
 		diff=1;}
-	if(strcmp(memccpy_control_dest3,memccpy_test_dest3) != 0){
+	if(strcmp(memccpy_control_dest3,memccpy_test_dest3) != 0 || *return_control3 != *return_test3){
 		printf("issue detected on test 3 (dest,\"Termi\\0nateX KO\",88,15): NULL char check\n");
 		diff=1;}
-	if(strcmp(memccpy_control_dest4,memccpy_test_dest4) != 0){
+	if(strcmp(memccpy_control_dest4,memccpy_test_dest4) != 0 || *return_control4 != *return_test4){
 		printf("issue detected on test 4 (dest,\"X KO\",88,5): sudden stop check\n");
 		diff=1;}
-	if(strcmp(memccpy_control_dest5,memccpy_test_dest5) != 0){
+	if(strcmp(memccpy_control_dest5,memccpy_test_dest5) != 0 || return_control5 != return_test5){
 		printf("issue detected on test 5 (dest,\"\",88,1): empty string check\n");
 		diff=1;}
 	if(diff==0)
@@ -319,9 +389,9 @@ void	test_ft_strcpy()
 	char strcpy_dest4[60];
 	char strcpy_dest5[60];
 	printf("ACTUAL RESULT   (ft_strcpy)\n");
-	printf("test0: %s \n",strcpy(strcpy_dest3,strcpy_test0));
-	printf("test1: %s \n",strcpy(strcpy_dest4,strcpy_test1));
-	printf("test2: %s \n",strcpy(strcpy_dest5,strcpy_test2));
+	printf("test0: %s \n",ft_strcpy(strcpy_dest3,strcpy_test0));
+	printf("test1: %s \n",ft_strcpy(strcpy_dest4,strcpy_test1));
+	printf("test2: %s \n",ft_strcpy(strcpy_dest5,strcpy_test2));
 
 	if(strcmp(strcpy_dest0,strcpy_dest3) != 0){
 		printf("issue detected on test 0 (\"13 chr string\"): base test, nothing special\n");
@@ -348,6 +418,8 @@ int		main(int ac, char **av)
 			test_ft_memcpy();
 		else if (strcmp(av[1], "memccpy") == 0 || strcmp(av[1], "ft_memccpy") == 0)
 			test_ft_memccpy();
+		else if (strcmp(av[1], "memmove") == 0 || strcmp(av[1], "ft_memmove") == 0)
+			test_ft_memmove();
 		else if (strcmp(av[1], "strlen") == 0 || strcmp(av[1], "ft_strlen") == 0)
 			test_ft_strlen();
 		else if (strcmp(av[1], "strcpy") == 0 || strcmp(av[1], "ft_strcpy") == 0)
