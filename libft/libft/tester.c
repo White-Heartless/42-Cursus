@@ -722,6 +722,59 @@ void	test_ft_strncat()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_strlcat()
+{
+	char TEST_NAME[] = "ft_strlcat test 1.0";
+	int diff = 0;
+
+	char strlcat_test0[] = "13 chr string";//standard check, nothing special
+	char strlcat_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strlcat_test2[] = "";//empty string check
+	char strlcat_test3[] = "Truncation";//Truncation check
+
+	char strlcat_dest0[60] = {"Destination. 13 chr string"};
+	char strlcat_dest1[60] = {"Destination. This\tstring\vis\ffull of\bspecial\echaracters\n"};
+	char strlcat_dest2[60] = {"Destination. "};
+	char strlcat_dest3[60] = {"Destination. Trunc"};
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strlcat)\n");
+	printf("test0: return: 39, Destination. 13 chr string\n");
+	printf("test1: return: 97, Destination. This\tstring\vis\ffull of\bspecial\echaracters\n");
+	printf("test2: return: 13, Destination. \n");
+	printf("test3: return: 28, Destination. Trunc\n\n");//all hardcoded cause my windows version does not have strlcat
+
+	char strlcat_dest4[60] = {"Destination. "};
+	char strlcat_dest5[60] = {"Destination. "};
+	char strlcat_dest6[60] = {"Destination. "};
+	char strlcat_dest7[60] = {"Destination. "};
+
+	size_t return_test0 = ft_strlcat(strlcat_dest4,strlcat_test0,28);
+	size_t return_test1 = ft_strlcat(strlcat_dest5,strlcat_test1,57);
+	size_t return_test2 = ft_strlcat(strlcat_dest6,strlcat_test2,14);
+	size_t return_test3 = ft_strlcat(strlcat_dest7,strlcat_test3,20);
+
+	printf("ACTUAL RESULT   (ft_strlcat)\n");
+	printf("test0: return: %I64u, %s\n",return_test0,strlcat_dest4);
+	printf("test1: return: %I64u, %s",return_test1,strlcat_dest5);
+	printf("test2: return: %I64u, %s\n",return_test2,strlcat_dest6);
+	printf("test3: return: %I64u, %s\n\n",return_test3,strlcat_dest7);
+
+	if(strcmp(strlcat_dest0,strlcat_dest4) != 0){
+		printf("issue detected on test 0 (dest,\"13 chr string\",14): base test, nothing special\n");
+		diff=1;}
+	if(strcmp(strlcat_dest1,strlcat_dest5) != 0){
+		printf("issue detected on test 1 (dest,\"This\\tstring\\vis\\ffull of\\bspecial\\echaracters\\n\",43): check if there are issues on special characters\n");
+		diff=1;}
+	if(strcmp(strlcat_dest2,strlcat_dest6) != 0){
+		printf("issue detected on test 2 (dest,\"\",1): empty string check\n");
+		diff=1;}
+	if(strcmp(strlcat_dest3,strlcat_dest7) != 0){
+		printf("issue detected on test 2 (dest,\"Truncation\",5): Truncation check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -753,6 +806,8 @@ int		main(int ac, char **av)
 			test_ft_strcat();
 		else if (strcmp(av[1], "strncat") == 0 || strcmp(av[1], "ft_strncat") == 0)
 			test_ft_strncat();
+		else if (strcmp(av[1], "strlcat") == 0 || strcmp(av[1], "ft_strlcat") == 0)
+			test_ft_strlcat();
 	}
 	return (0);
 }
