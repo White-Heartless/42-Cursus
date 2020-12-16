@@ -775,6 +775,44 @@ void	test_ft_strlcat()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_strchr()
+{
+	char TEST_NAME[] = "ft_strchr test 1.0";
+	int diff = 0;
+
+	char strchr_test0[] = "13 chr string";//standard check, nothing special
+	char strchr_test1[] = "This\tstring\vis\ffull of\bspecial\eCharacters\n";//special char check
+	char strchr_test2[] = "";//empty string check
+	char strchr_test3[] = "This are not the characters you are looking for";//empty string check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strchr)\n");
+	printf("test0: %s\n",strchr(strchr_test0,'s'));
+	printf("test1: %s",strchr(strchr_test1,'C'));
+	printf("test2: %s\n",strchr(strchr_test2,'s'));
+	printf("test3: %s\n\n",strchr(strchr_test3,'z'));
+
+	printf("ACTUAL RESULT   (ft_strchr)\n");
+	printf("test0: %s\n",ft_strchr(strchr_test0,'s'));
+	printf("test1: %s",ft_strchr(strchr_test1,'C'));
+	printf("test2: %s\n",ft_strchr(strchr_test2,'s'));
+	printf("test3: %s\n\n",ft_strchr(strchr_test3,'z'));
+
+	if(*strchr(strchr_test0,'s') != *ft_strchr(strchr_test0,'s')){
+		printf("issue detected on test 0 (\"13 chr string\",'s'): base test, nothing special\n");
+		diff=1;}
+	if(*strchr(strchr_test1,'h') != *ft_strchr(strchr_test1,'h')){
+		printf("issue detected on test 1 (\"This\\tstring\\vis\\ffull of\\bspecial\\eCharacters\\n\",'C'): check if there are issues on special characters\n");
+		diff=1;}
+	if(strchr(strchr_test2,'s') != ft_strchr(strchr_test2,'s')){
+		printf("issue detected on test 2 (\"\",'s'): empty string check\n");
+		diff=1;}
+	if(strchr(strchr_test3,'z') != ft_strchr(strchr_test3,'z')){
+		printf("issue detected on test 3 (\"This are not the characters you are looking for\",'z'): Truncation check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -808,6 +846,8 @@ int		main(int ac, char **av)
 			test_ft_strncat();
 		else if (strcmp(av[1], "strlcat") == 0 || strcmp(av[1], "ft_strlcat") == 0)
 			test_ft_strlcat();
+		else if (strcmp(av[1], "strchr") == 0 || strcmp(av[1], "ft_strchr") == 0)
+			test_ft_strchr();
 	}
 	return (0);
 }

@@ -4,7 +4,8 @@
 *Takes string source and concatenates up to n chars from it
 *after the end of destination, replacing the '\0' in destination,
 *and adding the '\0' from the source at the end.
-*dest HAS to be big enough to contain n chars + 1, or you will segfault
+*This function guarantees that the '\0' will always be placed
+*dest HAS to be big enough to contain n chars, or you will segfault
 */
 
 size_t	ft_strlcat(char* dest, const char* src, size_t n)
