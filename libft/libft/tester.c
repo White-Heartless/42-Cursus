@@ -783,7 +783,7 @@ void	test_ft_strchr()
 	char strchr_test0[] = "13 chr string";//standard check, nothing special
 	char strchr_test1[] = "This\tstring\vis\ffull of\bspecial\eCharacters\n";//special char check
 	char strchr_test2[] = "";//empty string check
-	char strchr_test3[] = "This are not the characters you are looking for";//empty string check
+	char strchr_test3[] = "This are not the characters you are looking for";//nothing to find check
 
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (strchr)\n");
@@ -808,7 +808,45 @@ void	test_ft_strchr()
 		printf("issue detected on test 2 (\"\",'s'): empty string check\n");
 		diff=1;}
 	if(strchr(strchr_test3,'z') != ft_strchr(strchr_test3,'z')){
-		printf("issue detected on test 3 (\"This are not the characters you are looking for\",'z'): Truncation check\n");
+		printf("issue detected on test 3 (\"This are not the characters you are looking for\",'z'): nothing to find check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strrchr()
+{
+	char TEST_NAME[] = "ft_strrchr test 1.0";
+	int diff = 0;
+
+	char strrchr_test0[] = "13 chr string";//standard check, nothing special
+	char strrchr_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strrchr_test2[] = "";//empty string check
+	char strrchr_test3[] = "This are not the characters you are looking for";//nothing to find check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strrchr)\n");
+	printf("test0: %s\n",strrchr(strrchr_test0,'r'));
+	printf("test1: %s",strrchr(strrchr_test1,'c'));
+	printf("test2: %s\n",strrchr(strrchr_test2,'s'));
+	printf("test3: %s\n\n",strrchr(strrchr_test3,'z'));
+
+	printf("ACTUAL RESULT   (ft_strrchr)\n");
+	printf("test0: %s\n",ft_strrchr(strrchr_test0,'r'));
+	printf("test1: %s",ft_strrchr(strrchr_test1,'c'));
+	printf("test2: %s\n",ft_strrchr(strrchr_test2,'s'));
+	printf("test3: %s\n\n",ft_strrchr(strrchr_test3,'z'));
+
+	if(*strrchr(strrchr_test0,'r') != *ft_strrchr(strrchr_test0,'r')){
+		printf("issue detected on test 0 (\"13 chr string\",'r'): base test, nothing special\n");
+		diff=1;}
+	if(*strrchr(strrchr_test1,'c') != *ft_strrchr(strrchr_test1,'c')){
+		printf("issue detected on test 1 (\"This\\tstring\\vis\\ffull of\\bspecial\\eCharacters\\n\",'c'): check if there are issues on special characters\n");
+		diff=1;}
+	if(strrchr(strrchr_test2,'s') != ft_strrchr(strrchr_test2,'s')){
+		printf("issue detected on test 2 (\"\",'s'): empty string check\n");
+		diff=1;}
+	if(strrchr(strrchr_test3,'z') != ft_strrchr(strrchr_test3,'z')){
+		printf("issue detected on test 3 (\"This are not the characters you are looking for\",'z'): nothing to find check\n");
 		diff=1;}
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
@@ -848,6 +886,8 @@ int		main(int ac, char **av)
 			test_ft_strlcat();
 		else if (strcmp(av[1], "strchr") == 0 || strcmp(av[1], "ft_strchr") == 0)
 			test_ft_strchr();
+		else if (strcmp(av[1], "strrchr") == 0 || strcmp(av[1], "ft_strrchr") == 0)
+			test_ft_strrchr();
 	}
 	return (0);
 }
