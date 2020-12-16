@@ -586,6 +586,142 @@ void	test_ft_strcpy()
 	if(diff==0)
 		printf("\nNo issue detected, Good Job!\n");
 }
+void	test_ft_strncpy()
+{
+	char TEST_NAME[] = "ft_strncpy test 1.0";
+	int diff = 0;
+
+	char strncpy_test0[] = "13 chr string";//standard check, nothing special
+	char strncpy_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strncpy_test2[] = "";//empty string check
+	char strncpy_test3[] = "This string is too long and will be truncated";//string too long check
+
+	char strncpy_dest0[60];
+	char strncpy_dest1[60];
+	char strncpy_dest2[60];
+	char strncpy_dest3[60] = "This string is too long\0                    ";
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strncpy)\n");
+	printf("test0: %s \n",strncpy(strncpy_dest0,strncpy_test0,14));
+	printf("test1: %s",strncpy(strncpy_dest1,strncpy_test1,43));
+	printf("test2: %s \n",strncpy(strncpy_dest2,strncpy_test2,1));
+	printf("test3: This string is too long \n\n");//have to hard code the result to avoid compiler warning
+												  //(it will warn you about the truncation)
+
+	char strncpy_dest4[60];
+	char strncpy_dest5[60];
+	char strncpy_dest6[60];
+	char strncpy_dest7[60] = "                       \0                    ";
+	printf("ACTUAL RESULT   (ft_strncpy)\n");
+	printf("test0: %s \n",ft_strncpy(strncpy_dest4,strncpy_test0,14));
+	printf("test1: %s",ft_strncpy(strncpy_dest5,strncpy_test1,43));
+	printf("test2: %s \n",ft_strncpy(strncpy_dest6,strncpy_test2,1));
+	printf("test3: %s \n\n",ft_strncpy(strncpy_dest7,strncpy_test3,23));
+
+	if(strcmp(strncpy_dest0,strncpy_dest4) != 0){
+		printf("issue detected on test 0 (dest,\"13 chr string\",14): base test, nothing special\n");
+		diff=1;}
+	if(strcmp(strncpy_dest1,strncpy_dest5) != 0){
+		printf("issue detected on test 1 (dest,\"This\\tstring\\vis\\ffull of\\bspecial\\echaracters\\n\",43): check if there are issues on special characters\n");
+		diff=1;}
+	if(strcmp(strncpy_dest2,strncpy_dest6) != 0){
+		printf("issue detected on test 2 (dest,\"\",1): empty string check\n");
+		diff=1;}
+	if(strcmp(strncpy_dest3,strncpy_dest7) != 0){
+		printf("issue detected on test 3 (dest,\"This string is too long and will be truncated\",23): truncation check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strcat()
+{
+	char TEST_NAME[] = "ft_strcat test 1.0";
+	int diff = 0;
+
+	char strcat_test0[] = "13 chr string";//standard check, nothing special
+	char strcat_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strcat_test2[] = "";//empty string check
+
+	char strcat_dest0[60] = {"Destination. "};
+	char strcat_dest1[60] = {"Destination. "};
+	char strcat_dest2[60] = {"Destination. "};
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strcat)\n");
+	printf("test0: %s \n",strcat(strcat_dest0,strcat_test0));
+	printf("test1: %s",strcat(strcat_dest1,strcat_test1));
+	printf("test2: %s \n\n",strcat(strcat_dest2,strcat_test2));
+
+	char strcat_dest4[60] = {"Destination. "};
+	char strcat_dest5[60] = {"Destination. "};
+	char strcat_dest6[60] = {"Destination. "};
+
+	printf("ACTUAL RESULT   (ft_strcat)\n");
+	printf("test0: %s \n",ft_strcat(strcat_dest4,strcat_test0));
+	printf("test1: %s",ft_strcat(strcat_dest5,strcat_test1));
+	printf("test2: %s \n\n",ft_strcat(strcat_dest6,strcat_test2));
+
+	if(strcmp(strcat_dest0,strcat_dest4) != 0){
+		printf("issue detected on test 0 (dest,\"13 chr string\"): base test, nothing special\n");
+		diff=1;}
+	if(strcmp(strcat_dest1,strcat_dest5) != 0){
+		printf("issue detected on test 1 (dest,\"This\\tstring\\vis\\ffull of\\bspecial\\echaracters\\n\"): check if there are issues on special characters\n");
+		diff=1;}
+	if(strcmp(strcat_dest2,strcat_dest6) != 0){
+		printf("issue detected on test 2 (dest,\"\",1): empty string check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strncat()
+{
+	char TEST_NAME[] = "ft_strncat test 1.0";
+	int diff = 0;
+
+	char strncat_test0[] = "13 chr string";//standard check, nothing special
+	char strncat_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strncat_test2[] = "";//empty string check
+	char strncat_test3[] = "Truncation";//Truncation check
+
+	char strncat_dest0[60] = {"Destination. "};
+	char strncat_dest1[60] = {"Destination. "};
+	char strncat_dest2[60] = {"Destination. "};
+	char strncat_dest3[60] = {"Destination. Trunc"};
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strncat)\n");
+	printf("test0: %s \n",strncat(strncat_dest0,strncat_test0,14));
+	printf("test1: %s",strncat(strncat_dest1,strncat_test1,43));
+	printf("test2: %s \n",strncat(strncat_dest2,strncat_test2,1));
+	printf("test3: Destination. Trunc \n\n");//hard coded to avoid compiler warning.
+
+	char strncat_dest4[60] = {"Destination. "};
+	char strncat_dest5[60] = {"Destination. "};
+	char strncat_dest6[60] = {"Destination. "};
+	char strncat_dest7[60] = {"Destination. "};
+
+	printf("ACTUAL RESULT   (ft_strncat)\n");
+	printf("test0: %s \n",ft_strncat(strncat_dest4,strncat_test0,14));
+	printf("test1: %s",ft_strncat(strncat_dest5,strncat_test1,43));
+	printf("test2: %s \n",ft_strncat(strncat_dest6,strncat_test2,1));
+	printf("test3: %s \n\n",ft_strncat(strncat_dest7,strncat_test3,5));
+
+	if(strcmp(strncat_dest0,strncat_dest4) != 0){
+		printf("issue detected on test 0 (dest,\"13 chr string\",14): base test, nothing special\n");
+		diff=1;}
+	if(strcmp(strncat_dest1,strncat_dest5) != 0){
+		printf("issue detected on test 1 (dest,\"This\\tstring\\vis\\ffull of\\bspecial\\echaracters\\n\",43): check if there are issues on special characters\n");
+		diff=1;}
+	if(strcmp(strncat_dest2,strncat_dest6) != 0){
+		printf("issue detected on test 2 (dest,\"\",1): empty string check\n");
+		diff=1;}
+	if(strcmp(strncat_dest3,strncat_dest7) != 0){
+		printf("issue detected on test 2 (dest,\"Truncation\",5): Truncation check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -611,6 +747,12 @@ int		main(int ac, char **av)
 			test_ft_strdup();
 		else if (strcmp(av[1], "strcpy") == 0 || strcmp(av[1], "ft_strcpy") == 0)
 			test_ft_strcpy();
+		else if (strcmp(av[1], "strncpy") == 0 || strcmp(av[1], "ft_strncpy") == 0)
+			test_ft_strncpy();
+		else if (strcmp(av[1], "strcat") == 0 || strcmp(av[1], "ft_strcat") == 0)
+			test_ft_strcat();
+		else if (strcmp(av[1], "strncat") == 0 || strcmp(av[1], "ft_strncat") == 0)
+			test_ft_strncat();
 	}
 	return (0);
 }
