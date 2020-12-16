@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strcpy" />
+				<Option parameters="strdup" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -37,7 +37,31 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ft_bzero.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memccpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memcmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memcpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memmove.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_memset.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ft_strcpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strdup.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ft_strlen.c">

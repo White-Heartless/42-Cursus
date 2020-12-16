@@ -8,11 +8,11 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*destination;
-	const unsigned char	*source;
+	unsigned char	*destination;
+	unsigned char	*source;
 
 	destination = (unsigned char*)dest;
-	source = (const unsigned char*)src;
+	source = (unsigned char*)src;
 	if (destination < source)
 	{
 		while (n--)
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		destination = (unsigned char*)dest + (n - 1);
-		source = (const unsigned char*)src + (n - 1);
+		source = (unsigned char*)src + (n - 1);
 		while (n--)
 			*destination-- = *source--;
 	}

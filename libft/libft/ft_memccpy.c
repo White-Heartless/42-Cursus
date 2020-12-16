@@ -11,7 +11,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	const unsigned char	*source;
 
 	destination = (unsigned char*)dest;
-	source = (const unsigned char*)src;
+	source = (unsigned char*)src;
 	while (n--)
 	{
 		*destination = *source;
