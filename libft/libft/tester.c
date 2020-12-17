@@ -1,6 +1,5 @@
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
 #define VERSION_NUMBER 2.0
 #define TEST_MODULE "libft"
@@ -851,6 +850,106 @@ void	test_ft_strrchr()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_strstr()
+{
+	char TEST_NAME[] = "ft_strstr test 1.0";
+	int diff = 0;
+
+	char strstr_test0[] = "13 chr string";//standard check, nothing special
+	char strstr_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strstr_test2[] = "";//empty string check
+	char strstr_test3[] = "This are not the characters you are looking for";//nothing to find check
+	char strstr_test4[] = "Haystack";//no input check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strstr)\n");
+	printf("test0: %s\n",strstr(strstr_test0,"str"));
+	printf("test1:  %s",strstr(strstr_test1,"\bspecial\ech"));
+	printf("test2: %s\n",strstr(strstr_test2,"something"));
+	printf("test3: %s\n",strstr(strstr_test3,"droids"));
+	printf("test4: %s\n\n",strstr(strstr_test4,""));
+
+	printf("ACTUAL RESULT   (ft_strstr)\n");
+	printf("test0: %s\n",ft_strstr(strstr_test0,"str"));
+	printf("test1:  %s",ft_strstr(strstr_test1,"\bspecial\ech"));
+	printf("test2: %s\n",ft_strstr(strstr_test2,"something"));
+	printf("test3: %s\n",ft_strstr(strstr_test3,"droids"));
+	printf("test4: %s\n\n",ft_strstr(strstr_test4,""));
+
+	if(*strstr(strstr_test0,"str") != *ft_strstr(strstr_test0,"str")){
+		printf("issue detected on test 0 (\"13 chr string\",\"str\"): base test, nothing special\n");
+		diff=1;}
+	if(*strstr(strstr_test1,"\bspecial\ech") != *ft_strstr(strstr_test1,"\bspecial\ech")){
+		printf("issue detected on test 1 (\"This\\tstring\\vis\\ffull of\\bspecial\\eCharacters\\n\",\"\\bspecial\\ech\"): check if there are issues on special characters\n");
+		diff=1;}
+	if(strstr(strstr_test2,"something") != ft_strstr(strstr_test2,"something")){
+		printf("issue detected on test 2 (\"\",\"something\"): empty string check\n");
+		diff=1;}
+	if(strstr(strstr_test3,"droids") != ft_strstr(strstr_test3,"droids")){
+		printf("issue detected on test 3 (\"This are not the characters you are looking for\",\"droids\"): nothing to find check\n");
+		diff=1;}
+	if(strstr(strstr_test4,"") != ft_strstr(strstr_test4,"")){
+		printf("issue detected on test 4 (\"Haystack\",\"\"): no input check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strnstr()
+{
+	char TEST_NAME[] = "ft_strnstr test 1.0";
+	int diff = 0;
+
+	char strnstr_test0[] = "13 chr string";//standard check, nothing special
+	char strnstr_test1[] = "This\tstring\vis\ffull of\bspecial\echaracters\n";//special char check
+	char strnstr_test2[] = "";//empty string check
+	char strnstr_test3[] = "This are not the characters you are looking for";//nothing to find check
+	char strnstr_test4[] = "Haystack";//empty needle check
+	char strnstr_test5[] = "This string is too long needle";//not in range check
+	char strnstr_test6[] = "n is zero";//n = 0 check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strnstr)\n");
+	printf("test0: string\n");
+	printf("test1:  \bspecial\echaracters\n");
+	printf("test2: (null)\n");
+	printf("test3: (null)\n");
+	printf("test4: Haystack\n");
+	printf("test5: (null)\n");
+	printf("test6: (null)\n\n");//all hardcoded because my windows version does not have strnstr
+
+	printf("ACTUAL RESULT   (ft_strnstr)\n");
+	printf("test0: %s\n",ft_strnstr(strnstr_test0,"str",13));
+	printf("test1:  %s",ft_strnstr(strnstr_test1,"\bspecial\ech",50));
+	printf("test2: %s\n",ft_strnstr(strnstr_test2,"something",15));
+	printf("test3: %s\n",ft_strnstr(strnstr_test3,"droids",50));
+	printf("test4: %s\n",ft_strnstr(strnstr_test4,"",15));
+	printf("test5: %s\n",ft_strnstr(strnstr_test5,"needle",29));
+	printf("test6: %s\n\n",ft_strnstr(strnstr_test6,"zero",0));
+
+	if('s' != *ft_strnstr(strnstr_test0,"str",13)){
+		printf("issue detected on test 0 (\"13 chr string\",\"str\",13): base test, nothing special\n");
+		diff=1;}
+	if('\b' != *ft_strnstr(strnstr_test1,"\bspecial\ech",50)){
+		printf("issue detected on test 1 (\"This\\tstring\\vis\\ffull of\\bspecial\\eCharacters\\n\",\"\\bspecial\\ech\",50): check if there are issues on special characters\n");
+		diff=1;}
+	if(NULL != ft_strnstr(strnstr_test2,"something",15)){
+		printf("issue detected on test 2 (\"\",\"something\",15): empty string check\n");
+		diff=1;}
+	if(NULL != ft_strnstr(strnstr_test3,"droids",50)){
+		printf("issue detected on test 3 (\"This are not the characters you are looking for\",\"droids\",50): nothing to find check\n");
+		diff=1;}
+	if('H' != *ft_strnstr(strnstr_test4,"",15)){
+		printf("issue detected on test 4 (\"Haystack\",\"\",15): no input check\n");
+		diff=1;}
+	if(NULL != ft_strnstr(strnstr_test4,"needle",29)){
+		printf("issue detected on test 5 (\"This string is too long needle\",\"needle\",29): no input check\n");
+		diff=1;}
+	if(NULL != ft_strnstr(strnstr_test4,"zero",0)){
+		printf("issue detected on test 6 (\"n is zero\",\"zero\",0): no input check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -888,6 +987,10 @@ int		main(int ac, char **av)
 			test_ft_strchr();
 		else if (strcmp(av[1], "strrchr") == 0 || strcmp(av[1], "ft_strrchr") == 0)
 			test_ft_strrchr();
+		else if (strcmp(av[1], "strstr") == 0 || strcmp(av[1], "ft_strstr") == 0)
+			test_ft_strstr();
+		else if (strcmp(av[1], "strnstr") == 0 || strcmp(av[1], "ft_strnstr") == 0)
+			test_ft_strnstr();
 	}
 	return (0);
 }
