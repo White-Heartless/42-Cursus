@@ -451,16 +451,16 @@ void	test_ft_memcmp()
 		printf("issue detected on test 3 (\"\",\"\",0): empty check\n");
 		diff=1;}
 	if(0 < return_test4){
-		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\",11): empty check\n");
+		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\",11): diff check\n");
 		diff=1;}
 	if(0 > return_test5){
-		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\",12): empty check\n");
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\",12): diff check\n");
 		diff=1;}
 	if(0 > return_test6){
-		printf("issue detected on test 6 (\"Termi\\0nate\",\"\",1): empty check\n");
+		printf("issue detected on test 6 (\"Termi\\0nate\",\"\",1): diff check\n");
 		diff=1;}
 	if(0 <  return_test7){
-		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\",1): empty check\n");
+		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\",1): diff check\n");
 		diff=1;}
 	if(diff==0)
 		printf("\nNo issue detected, Good Job!\n");
@@ -950,6 +950,166 @@ void	test_ft_strnstr()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_strcmp()
+{
+	char TEST_NAME[] = "ft_strcmp test 1.0";
+	int diff = 0;
+
+	char strcmp_test0[] = "Just a regular old string here";//standard check
+	char strcmp_test1[] = "Sp\necc\bia\vl";//special char check
+	char strcmp_test2[] = "Termi\0nate";//NULL char check
+	char strcmp_test3[] = "";//empty check
+
+	char strcmp_control0[] = "Just a regular old string here";
+	char strcmp_control1[] = "Sp\necc\bia\vl";
+	char strcmp_control2[] = "Termi\0nate";
+	char strcmp_control3[] = "";
+
+	int	return_control0 = strcmp(strcmp_control0,strcmp_test0);//standard check
+	int	return_control1 = strcmp(strcmp_control1,strcmp_test1);//special char check
+	int	return_control2 = strcmp(strcmp_control2,strcmp_test2);//NULL char check
+	int	return_control3 = strcmp(strcmp_control3,strcmp_test3);//empty check
+	int	return_control4 = strcmp(strcmp_control0,strcmp_test2);//diff check 0
+	int	return_control5 = strcmp(strcmp_control1,strcmp_test0);//diff check 1
+	int	return_control6 = strcmp(strcmp_control2,strcmp_test3);//diff check 2
+	int	return_control7 = strcmp(strcmp_control3,strcmp_test1);//diff check 3
+
+	int	return_test0 = ft_strcmp(strcmp_control0,strcmp_test0);
+	int	return_test1 = ft_strcmp(strcmp_control1,strcmp_test1);
+	int	return_test2 = ft_strcmp(strcmp_control2,strcmp_test2);
+	int	return_test3 = ft_strcmp(strcmp_control3,strcmp_test3);
+	int	return_test4 = ft_strcmp(strcmp_control0,strcmp_test2);
+	int	return_test5 = ft_strcmp(strcmp_control1,strcmp_test0);
+	int	return_test6 = ft_strcmp(strcmp_control2,strcmp_test3);
+	int	return_test7 = ft_strcmp(strcmp_control3,strcmp_test1);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strcmp)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d \n",return_control1);
+	printf("test2: %d \n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d   (or any negative value)\n",return_control4);
+	printf("test5: %d    (or any positive value)\n",return_control5);
+	printf("test6: %d   (or any positive value)\n",return_control6);
+	printf("test7: %d  (or any negative value)\n",return_control7);
+	printf("ACTUAL RESULT   (ft_strcmp)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d \n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d  (any negative value)\n",return_test4);
+	printf("test5: %d    (any positive value)\n",return_test5);
+	printf("test6: %d   (any positive value)\n",return_test6);
+	printf("test7: %d  (any negative value)\n",return_test7);
+
+	if(return_control0 != return_test0){
+		printf("issue detected on test 0 (\"Just a regular old string here\",\"Just a regular old string here\"): standard check, nothing special\n");
+		diff=1;}
+	if(return_control1 != return_test1){
+		printf("issue detected on test 1 (\"Sp\\necc\\bia\\vl\",\"Sp\\necc\\bia\\vl\"): special char check\n");
+		diff=1;}
+	if(return_control2 != return_test2){
+		printf("issue detected on test 2 (\"Termi\\0nate\",\"Termi\\0nate\"): NULL char check\n");
+		diff=1;}
+	if(return_control3 != return_test3){
+		printf("issue detected on test 3 (\"\",\"\"): empty check\n");
+		diff=1;}
+	if(0 < return_test4){
+		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\"): diff check\n");
+		diff=1;}
+	if(0 > return_test5){
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\"): diff check\n");
+		diff=1;}
+	if(0 > return_test6){
+		printf("issue detected on test 6 (\"Termi\\0nate\",\"\"): diff check\n");
+		diff=1;}
+	if(0 <  return_test7){
+		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\"): diff check\n");
+		diff=1;}
+	if(diff==0)
+		printf("\nNo issue detected, Good Job!\n");
+}
+void	test_ft_strncmp()
+{
+	char TEST_NAME[] = "ft_strncmp test 1.0";
+	int diff = 0;
+
+	char strncmp_test0[] = "Just a regular old string here";//standard check
+	char strncmp_test1[] = "Sp\necc\bia\vl";//special char check
+	char strncmp_test2[] = "Termi\0nate";//NULL char check
+	char strncmp_test3[] = "";//empty check
+
+	char strncmp_control0[] = "Just a regular old string here";
+	char strncmp_control1[] = "Sp\necc\bia\vl";
+	char strncmp_control2[] = "Termi\0nate";
+	char strncmp_control3[] = "";
+
+	int	return_control0 = strncmp(strncmp_control0,strncmp_test0,31);//standard check
+	int	return_control1 = strncmp(strncmp_control1,strncmp_test1,12);//special char check
+	int	return_control2 = strncmp(strncmp_control2,strncmp_test2,11);//NULL char check
+	int	return_control3 = strncmp(strncmp_control3,strncmp_test3,0);//empty check
+	int	return_control4 = strncmp(strncmp_control0,strncmp_test2,11);//diff check 0
+	int	return_control5 = strncmp(strncmp_control1,strncmp_test0,12);//diff check 1
+	int	return_control6 = strncmp(strncmp_control2,strncmp_test3,1);//diff check 2
+	int	return_control7 = strncmp(strncmp_control3,strncmp_test1,1);//diff check 3
+
+	int	return_test0 = ft_strncmp(strncmp_control0,strncmp_test0,31);
+	int	return_test1 = ft_strncmp(strncmp_control1,strncmp_test1,12);
+	int	return_test2 = ft_strncmp(strncmp_control2,strncmp_test2,11);
+	int	return_test3 = ft_strncmp(strncmp_control3,strncmp_test3,0);
+	int	return_test4 = ft_strncmp(strncmp_control0,strncmp_test2,11);
+	int	return_test5 = ft_strncmp(strncmp_control1,strncmp_test0,12);
+	int	return_test6 = ft_strncmp(strncmp_control2,strncmp_test3,1);
+	int	return_test7 = ft_strncmp(strncmp_control3,strncmp_test1,1);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strncmp)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d \n",return_control1);
+	printf("test2: %d \n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d   (or any negative value)\n",return_control4);
+	printf("test5: %d    (or any positive value)\n",return_control5);
+	printf("test6: %d   (or any positive value)\n",return_control6);
+	printf("test7: %d  (or any negative value)\n",return_control7);
+	printf("ACTUAL RESULT   (ft_strncmp)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d \n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d  (any negative value)\n",return_test4);
+	printf("test5: %d    (any positive value)\n",return_test5);
+	printf("test6: %d   (any positive value)\n",return_test6);
+	printf("test7: %d  (any negative value)\n",return_test7);
+
+	if(return_control0 != return_test0){
+		printf("issue detected on test 0 (\"Just a regular old string here\",\"Just a regular old string here\",31): standard check, nothing special\n");
+		diff=1;}
+	if(return_control1 != return_test1){
+		printf("issue detected on test 1 (\"Sp\\necc\\bia\\vl\",\"Sp\\necc\\bia\\vl\",12): special char check\n");
+		diff=1;}
+	if(return_control2 != return_test2){
+		printf("issue detected on test 2 (\"Termi\\0nate\",\"Termi\\0nate\",11): NULL char check\n");
+		diff=1;}
+	if(return_control3 != return_test3){
+		printf("issue detected on test 3 (\"\",\"\",0): empty check\n");
+		diff=1;}
+	if(0 < return_test4){
+		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\",11): diff check\n");
+		diff=1;}
+	if(0 > return_test5){
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\",12): diff check\n");
+		diff=1;}
+	if(0 > return_test6){
+		printf("issue detected on test 6 (\"Termi\\0nate\",\"\",1): diff check\n");
+		diff=1;}
+	if(0 <  return_test7){
+		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\",1): diff check\n");
+		diff=1;}
+	if(diff==0)
+		printf("\nNo issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -991,6 +1151,10 @@ int		main(int ac, char **av)
 			test_ft_strstr();
 		else if (strcmp(av[1], "strnstr") == 0 || strcmp(av[1], "ft_strnstr") == 0)
 			test_ft_strnstr();
+		else if (strcmp(av[1], "strcmp") == 0 || strcmp(av[1], "ft_strcmp") == 0)
+			test_ft_strcmp();
+		else if (strcmp(av[1], "strncmp") == 0 || strcmp(av[1], "ft_strncmp") == 0)
+			test_ft_strncmp();
 	}
 	return (0);
 }

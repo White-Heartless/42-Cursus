@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strdup" />
+				<Option parameters="strncmp" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -58,13 +58,43 @@
 		<Unit filename="ft_memset.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ft_strcat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strcmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ft_strcpy.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ft_strdup.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ft_strlcat.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ft_strlen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strncat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strncmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strncpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strnstr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strrchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_strstr.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="libft.h" />
