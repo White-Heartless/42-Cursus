@@ -2,14 +2,15 @@
 1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
 	"libft.h"
 
-1608226404 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+1608227646 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
 	<unistd.h>
 	<stdlib.h>
 	<string.h>
 
-1608226707 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
+1608229801 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
 	"libft.h"
 	<stdio.h>
+	<ctype.h>
 
 1608131196 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strcpy.c
 	"libft.h"
@@ -69,5 +70,20 @@
 	"libft.h"
 
 1608226857 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_atoi.c
+	"libft.h"
+
+1608227216 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isalpha.c
+	"libft.h"
+
+1608227575 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isalnum.c
+	"libft.h"
+
+1608227575 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isascii.c
+	"libft.h"
+
+1608227575 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isdigit.c
+	"libft.h"
+
+1608227587 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isprint.c
 	"libft.h"
 

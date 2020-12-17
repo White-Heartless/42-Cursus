@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
+#include <ctype.h>
 
 #define VERSION_NUMBER 2.0
 #define TEST_MODULE "libft"
@@ -1206,6 +1207,439 @@ void	test_ft_atoi()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_isalpha()
+{
+	char TEST_NAME[] = "ft_isalpha test 1.0";
+	int diff = 0;
+
+	int isalpha_test0 = (int)'5';
+	int isalpha_test1 = (int)'@';
+	int isalpha_test2 = (int)'A';
+	int isalpha_test3 = (int)'Z';
+	int isalpha_test4 = (int)'[';
+	int isalpha_test5 = (int)'`';
+	int isalpha_test6 = (int)'a';
+	int isalpha_test7 = (int)'z';
+	int isalpha_test8 = (int)'{';
+	int isalpha_test9 = (int)'!';
+
+	int	return_control0 = isalpha(isalpha_test0);
+	int	return_control1 = isalpha(isalpha_test1);
+	int	return_control2 = isalpha(isalpha_test2);
+	int	return_control3 = isalpha(isalpha_test3);
+	int	return_control4 = isalpha(isalpha_test4);
+	int	return_control5 = isalpha(isalpha_test5);
+	int	return_control6 = isalpha(isalpha_test6);
+	int	return_control7 = isalpha(isalpha_test7);
+	int	return_control8 = isalpha(isalpha_test8);
+	int	return_control9 = isalpha(isalpha_test9);
+
+
+	int	return_test0 = ft_isalpha(isalpha_test0);
+	int	return_test1 = ft_isalpha(isalpha_test1);
+	int	return_test2 = ft_isalpha(isalpha_test2);
+	int	return_test3 = ft_isalpha(isalpha_test3);
+	int	return_test4 = ft_isalpha(isalpha_test4);
+	int	return_test5 = ft_isalpha(isalpha_test5);
+	int	return_test6 = ft_isalpha(isalpha_test6);
+	int	return_test7 = ft_isalpha(isalpha_test7);
+	int	return_test8 = ft_isalpha(isalpha_test8);
+	int	return_test9 = ft_isalpha(isalpha_test9);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (isalpha)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d \n",return_control1);
+	printf("test2: %d (any positive number)\n",return_control2);
+	printf("test3: %d (any positive number)\n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d \n",return_control5);
+	printf("test6: %d (any positive number)\n",return_control6);
+	printf("test7: %d (any positive number)\n",return_control7);
+	printf("test8: %d \n",return_control8);
+	printf("test9: %d \n\n",return_control9);
+	printf("ACTUAL RESULT   (ft_isalpha)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d (any positive number)\n",return_test2);
+	printf("test3: %d (any positive number)\n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n",return_test5);
+	printf("test6: %d (any positive number)\n",return_test6);
+	printf("test7: %d (any positive number)\n",return_test7);
+	printf("test8: %d \n",return_test8);
+	printf("test9: %d \n\n",return_test9);
+
+	if(return_control0 != return_test0){
+		printf("issue detected on test 0 (\"5\")\n");
+		diff=1;}
+	if(return_control1 != return_test1){
+		printf("issue detected on test 1 (\"@\")\n");
+		diff=1;}
+	if(return_test2 < 1){
+		printf("issue detected on test 2 (\"A\")\n");
+		diff=1;}
+	if(return_test3 < 1){
+		printf("issue detected on test 3 (\"Z\")\n");
+		diff=1;}
+	if(return_control4 != return_test4){
+		printf("issue detected on test 4 (\"[\")\n");
+		diff=1;}
+	if(return_control5 != return_test5){
+		printf("issue detected on test 5 (\"`\")\n");
+		diff=1;}
+	if(return_test6 < 1){
+		printf("issue detected on test 6 (\"a\")\n");
+		diff=1;}
+	if(return_test7 < 1){
+		printf("issue detected on test 7 (\"z\")\n");
+		diff=1;}
+	if(return_control8 != return_test8){
+		printf("issue detected on test 8 (\"{\")\n");
+		diff=1;}
+	if(return_control9 != return_test9){
+		printf("issue detected on test 9 (\"!\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_isdigit()
+{
+	char TEST_NAME[] = "ft_isdigit test 1.0";
+	int diff = 0;
+
+	int isdigit_test0 = (int)'|';
+	int isdigit_test1 = (int)'/';
+	int isdigit_test2 = (int)'0';
+	int isdigit_test3 = (int)'9';
+	int isdigit_test4 = (int)':';
+	int isdigit_test5 = (int)'A';
+	int isdigit_test6 = (int)'a';
+	int isdigit_test7 = (int)'Z';
+	int isdigit_test8 = (int)'z';
+	int isdigit_test9 = (int)'!';
+
+	int	return_control0 = isdigit(isdigit_test0);
+	int	return_control1 = isdigit(isdigit_test1);
+	int	return_control2 = isdigit(isdigit_test2);
+	int	return_control3 = isdigit(isdigit_test3);
+	int	return_control4 = isdigit(isdigit_test4);
+	int	return_control5 = isdigit(isdigit_test5);
+	int	return_control6 = isdigit(isdigit_test6);
+	int	return_control7 = isdigit(isdigit_test7);
+	int	return_control8 = isdigit(isdigit_test8);
+	int	return_control9 = isdigit(isdigit_test9);
+
+
+	int	return_test0 = ft_isdigit(isdigit_test0);
+	int	return_test1 = ft_isdigit(isdigit_test1);
+	int	return_test2 = ft_isdigit(isdigit_test2);
+	int	return_test3 = ft_isdigit(isdigit_test3);
+	int	return_test4 = ft_isdigit(isdigit_test4);
+	int	return_test5 = ft_isdigit(isdigit_test5);
+	int	return_test6 = ft_isdigit(isdigit_test6);
+	int	return_test7 = ft_isdigit(isdigit_test7);
+	int	return_test8 = ft_isdigit(isdigit_test8);
+	int	return_test9 = ft_isdigit(isdigit_test9);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (isdigit)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d \n",return_control1);
+	printf("test2: %d (any positive number)\n",return_control2);
+	printf("test3: %d (any positive number)\n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d \n",return_control5);
+	printf("test6: %d \n",return_control6);
+	printf("test7: %d \n",return_control7);
+	printf("test8: %d \n",return_control8);
+	printf("test9: %d \n\n",return_control9);
+	printf("ACTUAL RESULT   (ft_isdigit)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d (any positive number)\n",return_test2);
+	printf("test3: %d (any positive number)\n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n",return_test5);
+	printf("test6: %d \n",return_test6);
+	printf("test7: %d \n",return_test7);
+	printf("test8: %d \n",return_test8);
+	printf("test9: %d \n\n",return_test9);
+
+	if(return_control0 != return_test0){
+		printf("issue detected on test 0 (\"|\")\n");
+		diff=1;}
+	if(return_control1 != return_test1){
+		printf("issue detected on test 1 (\"/\")\n");
+		diff=1;}
+	if(return_test2 < 1){
+		printf("issue detected on test 2 (\"0\")\n");
+		diff=1;}
+	if(return_test3 < 1){
+		printf("issue detected on test 3 (\"9\")\n");
+		diff=1;}
+	if(return_control4 != return_test4){
+		printf("issue detected on test 4 (\":\")\n");
+		diff=1;}
+	if(return_control5 != return_test5){
+		printf("issue detected on test 5 (\"A\")\n");
+		diff=1;}
+	if(return_test6 != 0){
+		printf("issue detected on test 6 (\"a\")\n");
+		diff=1;}
+	if(return_test7 != 0){
+		printf("issue detected on test 7 (\"Z\")\n");
+		diff=1;}
+	if(return_control8 != return_test8){
+		printf("issue detected on test 8 (\"z\")\n");
+		diff=1;}
+	if(return_control9 != return_test9){
+		printf("issue detected on test 9 (\"!\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_isalnum()
+{
+	char TEST_NAME[] = "ft_isalnum test 1.0";
+	int diff = 0;
+
+	int isalnum_test0 = (int)'/';
+	int isalnum_test1 = (int)'0';
+	int isalnum_test2 = (int)'9';
+	int isalnum_test3 = (int)':';
+	int isalnum_test4 = (int)'`';
+	int isalnum_test5 = (int)'a';
+	int isalnum_test6 = (int)'z';
+	int isalnum_test7 = (int)'{';
+	int isalnum_test8 = (int)'@';
+	int isalnum_test9 = (int)'A';
+	int isalnum_test10 = (int)'Z';
+	int isalnum_test11 = (int)'[';
+
+	int	return_control0 = isalnum(isalnum_test0);
+	int	return_control1 = isalnum(isalnum_test1);
+	int	return_control2 = isalnum(isalnum_test2);
+	int	return_control3 = isalnum(isalnum_test3);
+	int	return_control4 = isalnum(isalnum_test4);
+	int	return_control5 = isalnum(isalnum_test5);
+	int	return_control6 = isalnum(isalnum_test6);
+	int	return_control7 = isalnum(isalnum_test7);
+	int	return_control8 = isalnum(isalnum_test8);
+	int	return_control9 = isalnum(isalnum_test9);
+	int	return_control10 = isalnum(isalnum_test10);
+	int	return_control11 = isalnum(isalnum_test11);
+
+
+	int	return_test0 = ft_isalnum(isalnum_test0);
+	int	return_test1 = ft_isalnum(isalnum_test1);
+	int	return_test2 = ft_isalnum(isalnum_test2);
+	int	return_test3 = ft_isalnum(isalnum_test3);
+	int	return_test4 = ft_isalnum(isalnum_test4);
+	int	return_test5 = ft_isalnum(isalnum_test5);
+	int	return_test6 = ft_isalnum(isalnum_test6);
+	int	return_test7 = ft_isalnum(isalnum_test7);
+	int	return_test8 = ft_isalnum(isalnum_test8);
+	int	return_test9 = ft_isalnum(isalnum_test9);
+	int	return_test10 = ft_isalnum(isalnum_test10);
+	int	return_test11 = ft_isalnum(isalnum_test11);
+
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (isalnum)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d (any positive number)\n",return_control1);
+	printf("test2: %d (any positive number)\n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d (any positive number)\n",return_control5);
+	printf("test6: %d (any positive number)\n",return_control6);
+	printf("test7: %d \n",return_control7);
+	printf("test8: %d \n",return_control8);
+	printf("test9: %d (any positive number)\n",return_control9);
+	printf("test10: %d (any positive number)\n",return_control10);
+	printf("test11: %d \n\n",return_control11);
+	printf("ACTUAL RESULT   (ft_isalnum)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d (any positive number)\n",return_test1);
+	printf("test2: %d (any positive number)\n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d (any positive number)\n",return_test5);
+	printf("test6: %d (any positive number)\n",return_test6);
+	printf("test7: %d \n",return_test7);
+	printf("test8: %d \n",return_test8);
+	printf("test9: %d (any positive number)\n",return_test9);
+	printf("test10: %d (any positive number)\n",return_test10);
+	printf("test11: %d \n\n",return_test11);
+
+	if(return_test0 != 0){
+		printf("issue detected on test 0 (\"/\")\n");
+		diff=1;}
+	if(return_test1 < 1){
+		printf("issue detected on test 1 (\"0\")\n");
+		diff=1;}
+	if(return_test2 < 1){
+		printf("issue detected on test 2 (\"9\")\n");
+		diff=1;}
+	if(return_test3 != 0){
+		printf("issue detected on test 3 (\":\")\n");
+		diff=1;}
+	if(return_test4 != 0){
+		printf("issue detected on test 4 (\"`\")\n");
+		diff=1;}
+	if(return_test5 < 1){
+		printf("issue detected on test 5 (\"a\")\n");
+		diff=1;}
+	if(return_test6 < 1){
+		printf("issue detected on test 6 (\"z\")\n");
+		diff=1;}
+	if(return_test7 != 0){
+		printf("issue detected on test 7 (\"{\")\n");
+		diff=1;}
+	if(return_test8 != 0){
+		printf("issue detected on test 8 (\"@\")\n");
+		diff=1;}
+	if(return_test9 < 1){
+		printf("issue detected on test 9 (\"A\")\n");
+		diff=1;}
+	if(return_test10 < 1){
+		printf("issue detected on test 10 (\"Z\")\n");
+		diff=1;}
+	if(return_test11 != 0){
+		printf("issue detected on test 11 (\"[\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_isascii()
+{
+	char TEST_NAME[] = "ft_isascii test 1.0";
+	int diff = 0;
+
+	int isascii_test0 = 0;
+	int isascii_test1 = 42;
+	int isascii_test2 = 127;
+	int isascii_test3 = 128;
+	int isascii_test4 = -1;
+	int isascii_test5 = -69;
+
+	int	return_control0 = isascii(isascii_test0);
+	int	return_control1 = isascii(isascii_test1);
+	int	return_control2 = isascii(isascii_test2);
+	int	return_control3 = isascii(isascii_test3);
+	int	return_control4 = isascii(isascii_test4);
+	int	return_control5 = isascii(isascii_test5);
+
+	int	return_test0 = ft_isascii(isascii_test0);
+	int	return_test1 = ft_isascii(isascii_test1);
+	int	return_test2 = ft_isascii(isascii_test2);
+	int	return_test3 = ft_isascii(isascii_test3);
+	int	return_test4 = ft_isascii(isascii_test4);
+	int	return_test5 = ft_isascii(isascii_test5);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (isascii)\n");
+	printf("test0: %d (any positive number)\n",return_control0);
+	printf("test1: %d (any positive number)\n",return_control1);
+	printf("test2: %d (any positive number)\n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d \n\n",return_control5);
+
+	printf("ACTUAL RESULT   (ft_isascii)\n");
+	printf("test0: %d (any positive number)\n",return_test0);
+	printf("test1: %d (any positive number)\n",return_test1);
+	printf("test2: %d (any positive number)\n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n\n",return_test5);
+
+	if(return_test0 < 1){
+		printf("issue detected on test 0 (\"0\")\n");
+		diff=1;}
+	if(return_test1 < 1){
+		printf("issue detected on test 1 (\"42\")\n");
+		diff=1;}
+	if(return_test2 < 1){
+		printf("issue detected on test 2 (\"127\")\n");
+		diff=1;}
+	if(return_test3 != 0){
+		printf("issue detected on test 3 (\"128\")\n");
+		diff=1;}
+	if(return_test4 != 0){
+		printf("issue detected on test 4 (\"-1\")\n");
+		diff=1;}
+	if(return_test5 != 0){
+		printf("issue detected on test 5 (\"-69\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_isprint()
+{
+	char TEST_NAME[] = "ft_isprint test 1.0";
+	int diff = 0;
+
+	int isprint_test0 = 31;
+	int isprint_test1 = 32;
+	int isprint_test2 = 126;
+	int isprint_test3 = 127;
+	int isprint_test4 = -1;
+	int isprint_test5 = 128;
+
+	int	return_control0 = isprint(isprint_test0);
+	int	return_control1 = isprint(isprint_test1);
+	int	return_control2 = isprint(isprint_test2);
+	int	return_control3 = isprint(isprint_test3);
+	int	return_control4 = isprint(isprint_test4);
+	int	return_control5 = isprint(isprint_test5);
+
+	int	return_test0 = ft_isprint(isprint_test0);
+	int	return_test1 = ft_isprint(isprint_test1);
+	int	return_test2 = ft_isprint(isprint_test2);
+	int	return_test3 = ft_isprint(isprint_test3);
+	int	return_test4 = ft_isprint(isprint_test4);
+	int	return_test5 = ft_isprint(isprint_test5);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (isprint)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d (any positive number)\n",return_control1);
+	printf("test2: %d (any positive number)\n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d \n\n",return_control5);
+
+	printf("ACTUAL RESULT   (ft_isprint)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d (any positive number)\n",return_test1);
+	printf("test2: %d (any positive number)\n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n\n",return_test5);
+
+	if(return_test0 != 0){
+		printf("issue detected on test 0 (\"31\")\n");
+		diff=1;}
+	if(return_test1 < 1){
+		printf("issue detected on test 1 (\"32\")\n");
+		diff=1;}
+	if(return_test2 < 1){
+		printf("issue detected on test 2 (\"126\")\n");
+		diff=1;}
+	if(return_test3 != 0){
+		printf("issue detected on test 3 (\"127\")\n");
+		diff=1;}
+	if(return_test4 != 0){
+		printf("issue detected on test 4 (\"-1\")\n");
+		diff=1;}
+	if(return_test5 != 0){
+		printf("issue detected on test 5 (\"128\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -1253,16 +1687,16 @@ int		main(int ac, char **av)
 			test_ft_strncmp();
 		else if (strcmp(av[1], "atoi") == 0 || strcmp(av[1], "ft_atoi") == 0)
 			test_ft_atoi();
-		//else if (strcmp(av[1], "isalpha") == 0 || strcmp(av[1], "ft_isalpha") == 0)
-		//	test_ft_isalpha();
-		//else if (strcmp(av[1], "isdigit") == 0 || strcmp(av[1], "ft_isdigit") == 0)
-		//	test_ft_isdigit();
-		//else if (strcmp(av[1], "isalnum") == 0 || strcmp(av[1], "ft_isalnum") == 0)
-		//	test_ft_isalnum();
-		//else if (strcmp(av[1], "isascii") == 0 || strcmp(av[1], "ft_isascii") == 0)
-		//	test_ft_isascii();
-		//else if (strcmp(av[1], "isprint") == 0 || strcmp(av[1], "ft_isprint") == 0)
-		//	test_ft_isprint();
+		else if (strcmp(av[1], "isalpha") == 0 || strcmp(av[1], "ft_isalpha") == 0)
+			test_ft_isalpha();
+		else if (strcmp(av[1], "isdigit") == 0 || strcmp(av[1], "ft_isdigit") == 0)
+			test_ft_isdigit();
+		else if (strcmp(av[1], "isalnum") == 0 || strcmp(av[1], "ft_isalnum") == 0)
+			test_ft_isalnum();
+		else if (strcmp(av[1], "isascii") == 0 || strcmp(av[1], "ft_isascii") == 0)
+			test_ft_isascii();
+		else if (strcmp(av[1], "isprint") == 0 || strcmp(av[1], "ft_isprint") == 0)
+			test_ft_isprint();
 		//else if (strcmp(av[1], "toupper") == 0 || strcmp(av[1], "ft_toupper") == 0)
 		//	test_ft_toupper();
 		//else if (strcmp(av[1], "tolower") == 0 || strcmp(av[1], "ft_tolower") == 0)
