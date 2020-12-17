@@ -2,12 +2,12 @@
 1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
 	"libft.h"
 
-1608208614 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+1608226404 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
 	<unistd.h>
 	<stdlib.h>
 	<string.h>
 
-1608208954 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
+1608226707 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
 	"libft.h"
 	<stdio.h>
 
@@ -66,5 +66,8 @@
 	"libft.h"
 
 1608208996 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strncmp.c
+	"libft.h"
+
+1608226857 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_atoi.c
 	"libft.h"
 

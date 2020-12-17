@@ -1110,6 +1110,102 @@ void	test_ft_strncmp()
 	if(diff==0)
 		printf("\nNo issue detected, Good Job!\n");
 }
+void	test_ft_atoi()
+{
+	char TEST_NAME[] = "ft_atoi test 1.0";
+	int diff = 0;
+
+	char atoi_test0[] = "   -178asd";//standard check
+	char atoi_test1[] = " \n\t\v\f\r+42";//special char check
+	char atoi_test2[] = "   +-+90";//invalid input check
+	char atoi_test3[] = "";//empty check
+	char atoi_test4[] = "     -2,147,483,648";//min integer check
+	char atoi_test5[] = "    +2,147,483,647";//max integer check
+	char atoi_test6[] = "   69";//signless check
+	char atoi_test7[] = "-10";//spaceless check
+	char atoi_test8[] = "  46  ";//spaces at end check
+	char atoi_test9[] = "  -asd132";//no number check
+
+	int	return_control0 = atoi(atoi_test0);//standard check
+	int	return_control1 = atoi(atoi_test1);//special char check
+	int	return_control2 = atoi(atoi_test2);//invalid input check
+	int	return_control3 = atoi(atoi_test3);//empty check
+	int	return_control4 = atoi(atoi_test4);//min integer check
+	int	return_control5 = atoi(atoi_test5);//max integer check
+	int	return_control6 = atoi(atoi_test6);//signless check
+	int	return_control7 = atoi(atoi_test7);//spaceless check
+	int	return_control8 = atoi(atoi_test8);//spaces at end check
+	int	return_control9 = atoi(atoi_test9);//no number check
+
+
+	int	return_test0 = ft_atoi(atoi_test0);
+	int	return_test1 = ft_atoi(atoi_test1);
+	int	return_test2 = ft_atoi(atoi_test2);
+	int	return_test3 = ft_atoi(atoi_test3);
+	int	return_test4 = ft_atoi(atoi_test4);
+	int	return_test5 = ft_atoi(atoi_test5);
+	int	return_test6 = ft_atoi(atoi_test6);
+	int	return_test7 = ft_atoi(atoi_test7);
+	int	return_test8 = ft_atoi(atoi_test8);
+	int	return_test9 = ft_atoi(atoi_test9);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (atoi)\n");
+	printf("test0: %d \n",return_control0);
+	printf("test1: %d \n",return_control1);
+	printf("test2: %d \n",return_control2);
+	printf("test3: %d \n",return_control3);
+	printf("test4: %d \n",return_control4);
+	printf("test5: %d \n",return_control5);
+	printf("test6: %d \n",return_control6);
+	printf("test7: %d \n",return_control7);
+	printf("test8: %d \n",return_control8);
+	printf("test9: %d \n\n",return_control9);
+	printf("ACTUAL RESULT   (ft_atoi)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d \n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n",return_test5);
+	printf("test6: %d \n",return_test6);
+	printf("test7: %d \n",return_test7);
+	printf("test8: %d \n",return_test8);
+	printf("test9: %d \n\n",return_test9);
+
+	if(return_control0 != return_test0){
+		printf("issue detected on test 0 (\"   -178asd\"): standard check, nothing special\n");
+		diff=1;}
+	if(return_control1 != return_test1){
+		printf("issue detected on test 1 (\" \\n\\t\\v\\f\\r+42\"): special char check\n");
+		diff=1;}
+	if(return_control2 != return_test2){
+		printf("issue detected on test 2 (\"   +-+90\"): invalid input check\n");
+		diff=1;}
+	if(return_control3 != return_test3){
+		printf("issue detected on test 3 (\"\"): empty check\n");
+		diff=1;}
+	if(return_control4 != return_test4){
+		printf("issue detected on test 4 (\"     -2,147,483,648\"): min integer check\n");
+		diff=1;}
+	if(return_control5 != return_test5){
+		printf("issue detected on test 5 (\"    +2,147,483,647\"): max integer check\n");
+		diff=1;}
+	if(return_control6 != return_test6){
+		printf("issue detected on test 6 (\"   69\"): signless check\n");
+		diff=1;}
+	if(return_control7 != return_test7){
+		printf("issue detected on test 7 (\"-10\"): no spaces check\n");
+		diff=1;}
+	if(return_control8 != return_test8){
+		printf("issue detected on test 8 (\"  46  \"): spaces after number check\n");
+		diff=1;}
+	if(return_control9 != return_test9){
+		printf("issue detected on test 9 (\"  -asd132\"): no number check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -1155,6 +1251,82 @@ int		main(int ac, char **av)
 			test_ft_strcmp();
 		else if (strcmp(av[1], "strncmp") == 0 || strcmp(av[1], "ft_strncmp") == 0)
 			test_ft_strncmp();
+		else if (strcmp(av[1], "atoi") == 0 || strcmp(av[1], "ft_atoi") == 0)
+			test_ft_atoi();
+		//else if (strcmp(av[1], "isalpha") == 0 || strcmp(av[1], "ft_isalpha") == 0)
+		//	test_ft_isalpha();
+		//else if (strcmp(av[1], "isdigit") == 0 || strcmp(av[1], "ft_isdigit") == 0)
+		//	test_ft_isdigit();
+		//else if (strcmp(av[1], "isalnum") == 0 || strcmp(av[1], "ft_isalnum") == 0)
+		//	test_ft_isalnum();
+		//else if (strcmp(av[1], "isascii") == 0 || strcmp(av[1], "ft_isascii") == 0)
+		//	test_ft_isascii();
+		//else if (strcmp(av[1], "isprint") == 0 || strcmp(av[1], "ft_isprint") == 0)
+		//	test_ft_isprint();
+		//else if (strcmp(av[1], "toupper") == 0 || strcmp(av[1], "ft_toupper") == 0)
+		//	test_ft_toupper();
+		//else if (strcmp(av[1], "tolower") == 0 || strcmp(av[1], "ft_tolower") == 0)
+		//	test_ft_tolower();
+		//else if (strcmp(av[1], "memalloc") == 0 || strcmp(av[1], "ft_memalloc") == 0)
+		//	test_ft_memalloc();
+		//else if (strcmp(av[1], "memdel") == 0 || strcmp(av[1], "ft_memdel") == 0)
+		//	test_ft_memdel();
+		//else if (strcmp(av[1], "strnew") == 0 || strcmp(av[1], "ft_strnew") == 0)
+		//	test_ft_strnew();
+		//else if (strcmp(av[1], "strdel") == 0 || strcmp(av[1], "ft_strdel") == 0)
+		//	test_ft_strdel();
+		//else if (strcmp(av[1], "strclr") == 0 || strcmp(av[1], "ft_strclr") == 0)
+		//	test_ft_strclr();
+		//else if (strcmp(av[1], "striter") == 0 || strcmp(av[1], "ft_striter") == 0)
+		//	test_ft_striter();
+		//else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)
+		//	test_ft_striteri();
+		//else if (strcmp(av[1], "strmap") == 0 || strcmp(av[1], "ft_strmap") == 0)
+		//	test_ft_strmap();
+		//else if (strcmp(av[1], "strmapi") == 0 || strcmp(av[1], "ft_strmapi") == 0)
+		//	test_ft_strmapi();
+		//else if (strcmp(av[1], "strequ") == 0 || strcmp(av[1], "ft_strequ") == 0)
+		//	test_ft_strequ();
+		//else if (strcmp(av[1], "strnequ") == 0 || strcmp(av[1], "ft_strnequ") == 0)
+		//	test_ft_strnequ();
+		//else if (strcmp(av[1], "strsub") == 0 || strcmp(av[1], "ft_strsub") == 0)
+		//	test_ft_strsub();
+		//else if (strcmp(av[1], "strjoin") == 0 || strcmp(av[1], "ft_strjoin") == 0)
+		//	test_ft_strjoin();
+		//else if (strcmp(av[1], "strtrim") == 0 || strcmp(av[1], "ft_strtrim") == 0)
+		//	test_ft_strtrim();
+		//else if (strcmp(av[1], "strsplit") == 0 || strcmp(av[1], "ft_strsplit") == 0)
+		//	test_ft_strsplit();
+		//else if (strcmp(av[1], "itoa") == 0 || strcmp(av[1], "ft_itoa") == 0)
+		//	test_ft_itoa();
+		//else if (strcmp(av[1], "putchar") == 0 || strcmp(av[1], "ft_putchar") == 0)
+		//	test_ft_putchar();
+		//else if (strcmp(av[1], "putstr") == 0 || strcmp(av[1], "ft_putstr") == 0)
+		//	test_ft_putstr();
+		//else if (strcmp(av[1], "putendl") == 0 || strcmp(av[1], "ft_putendl") == 0)
+		//	test_ft_putendl();
+		//else if (strcmp(av[1], "putnbr") == 0 || strcmp(av[1], "ft_putnbr") == 0)
+		//	test_ft_putnbr();
+		//else if (strcmp(av[1], "putchar_fd") == 0 || strcmp(av[1], "ft_putchar_fd") == 0)
+		//	test_ft_putchar_fd();
+		//else if (strcmp(av[1], "putstr_fd") == 0 || strcmp(av[1], "ft_putstr_fd") == 0)
+		//	test_ft_putstr_fd();
+		//else if (strcmp(av[1], "putendl_fd") == 0 || strcmp(av[1], "ft_putendl_fd") == 0)
+		//	test_ft_putendl_fd();
+		//else if (strcmp(av[1], "putnbr_fd") == 0 || strcmp(av[1], "ft_putnbr_fd") == 0)
+		//	test_ft_putnbr_fd();
+		//else if (strcmp(av[1], "lstnew") == 0 || strcmp(av[1], "ft_lstnew") == 0)
+		//	test_ft_lstnew();
+		//else if (strcmp(av[1], "lstdelone") == 0 || strcmp(av[1], "ft_lstdelone") == 0)
+		//	test_ft_lstdelone();
+		//else if (strcmp(av[1], "lstdel") == 0 || strcmp(av[1], "ft_lstdel") == 0)
+		//	test_ft_lstdel();
+		//else if (strcmp(av[1], "lstadd") == 0 || strcmp(av[1], "ft_lstadd") == 0)
+		//	test_ft_lstadd();
+		//else if (strcmp(av[1], "lstiter") == 0 || strcmp(av[1], "ft_lstiter") == 0)
+		//	test_ft_lstiter();
+		//else if (strcmp(av[1], "lstmap") == 0 || strcmp(av[1], "ft_lstmap") == 0)
+		//	test_ft_lstmap();
 	}
 	return (0);
 }
