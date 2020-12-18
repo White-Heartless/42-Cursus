@@ -1768,7 +1768,7 @@ void	test_ft_tolower()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
-void	test_ft_memalloc()
+void	test_ft_memalloc()//honestly i have no clue if this test is any good
 {
 	char TEST_NAME[] = "ft_memalloc test 1.0";
 	int diff = 0;
@@ -1813,26 +1813,35 @@ void	test_ft_memalloc()
 	printf("test 2: 0\n");
 	printf("test 3: 0\n");
 	printf("test 4: 0\n");
-	printf("test 5: 0\n");
+	printf("test 5: 0\n\n");
 	printf("ACTUAL RESULT   (ft_memalloc)\n");
 	printf("test 0: %d\n",memcmp(memalloc_test0,memalloc_control0,sizeof(char)));
 	printf("test 1: %d\n",memcmp(memalloc_test1,memalloc_control1,(sizeof(char)*10)));
 	printf("test 2: %d\n",memcmp(memalloc_test2,memalloc_control2,sizeof(int)));
 	printf("test 3: %d\n",memcmp(memalloc_test3,memalloc_control3,(sizeof(int)*10)));
 	printf("test 4: %d\n",memcmp(memalloc_test4,memalloc_control4,sizeof(long)));
-	printf("test 5: %d\n",memcmp(memalloc_test5,memalloc_control5,(sizeof(long)*10)));
+	printf("test 5: %d\n\n",memcmp(memalloc_test5,memalloc_control5,(sizeof(long)*10)));
 
-	if(0){
-		printf("issue detected on test 0 (\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",89,30):standard check, nothing special\n");
+	if(memcmp(memalloc_test0,memalloc_control0,sizeof(char)) != 0){
+		printf("issue detected on test 0 : (char *)ft_memalloc(sizeof(char)) one char check\n");
 		diff = 1;}
-	if(0){
-		printf("issue detected on test 1 (\"XX\\nXX\\bXX\\vX\",89,10): special char check\n");
+	if(memcmp(memalloc_test1,memalloc_control1,sizeof(char) * 10) != 0){
+		printf("issue detected on test 1 : (char *)ft_memalloc(sizeof(char) * 10) ten char check\n");
 		diff = 1;}
-	if(0){
-		printf("issue detected on test 2 (\"XXXXX\\0XXXX\",89,10): NULL char check\n");
+	if(memcmp(memalloc_test2,memalloc_control2,sizeof(int)) != 0){
+		printf("issue detected on test 2 : (int *)ft_memalloc(sizeof(int)) one int check\n");
+		diff = 1;}
+	if(memcmp(memalloc_test3,memalloc_control3,(sizeof(int)*10)) != 0){
+		printf("issue detected on test 3 : (int *)ft_memalloc(sizeof(int) * 10) ten int check\n");
+		diff = 1;}
+	if(memcmp(memalloc_test4,memalloc_control4,sizeof(long)) != 0){
+		printf("issue detected on test 4 : (long *)malloc(sizeof(long)) one long check\n");
+		diff = 1;}
+	if(memcmp(memalloc_test5,memalloc_control5,(sizeof(long)*10)) != 0){
+		printf("issue detected on test 5 : (long *)ft_memalloc(sizeof(long) * 10) ten long check\n");
 		diff = 1;}
 	if(diff==0)
-		printf("\nNo issue detected, Good Job!\n");
+		printf("No issue detected, Good Job!\n");
 }
 
 int		main(int ac, char **av)
