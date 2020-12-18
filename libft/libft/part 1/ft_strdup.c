@@ -10,7 +10,7 @@ char	*ft_strdup(const char *src)
 	int		i;
 
 	i = -1;
-	if ((duplicate = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))) == NULL)
+	if ((duplicate = (char *)ft_memalloc(sizeof(char) * (ft_strlen(src) + 1))) == NULL)
 		return (NULL);
 	while (src[++i])
 		duplicate[i] = src[i];
