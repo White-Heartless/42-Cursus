@@ -2,12 +2,12 @@
 1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
 	"libft.h"
 
-1608227646 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+1608331254 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
 	<unistd.h>
 	<stdlib.h>
 	<string.h>
 
-1608229801 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
+1608333622 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
 	"libft.h"
 	<stdio.h>
 	<ctype.h>
@@ -86,4 +86,93 @@
 
 1608227587 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_isprint.c
 	"libft.h"
+
+1608300921 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_atoi.c
+	"../libft.h"
+
+1608300934 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_bzero.c
+	"../libft.h"
+
+1608300937 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isalnum.c
+	"../libft.h"
+
+1608300940 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isascii.c
+	"../libft.h"
+
+1608300943 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isalpha.c
+	"../libft.h"
+
+1608300946 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isprint.c
+	"../libft.h"
+
+1608300949 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isdigit.c
+	"../libft.h"
+
+1608300951 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memccpy.c
+	"../libft.h"
+
+1608300954 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memcpy.c
+	"../libft.h"
+
+1608300967 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memchr.c
+	"../libft.h"
+
+1608300971 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memcmp.c
+	"../libft.h"
+
+1608300975 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memmove.c
+	"../libft.h"
+
+1608300978 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_memset.c
+	"../libft.h"
+
+1608300980 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strcat.c
+	"../libft.h"
+
+1608300983 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strchr.c
+	"../libft.h"
+
+1608300987 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strcmp.c
+	"../libft.h"
+
+1608300989 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strcpy.c
+	"../libft.h"
+
+1608300991 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strlen.c
+	"../libft.h"
+
+1608300995 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strlcat.c
+	"../libft.h"
+
+1608301004 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strdup.c
+	"../libft.h"
+
+1608301014 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strncat.c
+	"../libft.h"
+
+1608301014 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strncmp.c
+	"../libft.h"
+
+1608301017 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strncpy.c
+	"../libft.h"
+
+1608301020 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strnstr.c
+	"../libft.h"
+
+1608300695 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\untitled2.c
+
+1608301023 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strrchr.c
+	"../libft.h"
+
+1608301026 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strstr.c
+	"../libft.h"
+
+1608307866 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_tolower.c
+	"../libft.h"
+
+1608307866 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_toupper.c
+	"../libft.h"
+
+1608331254 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_memalloc.c
+	"../libft.h"
 

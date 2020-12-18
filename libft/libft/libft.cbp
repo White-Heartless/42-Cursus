@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strncmp" />
+				<Option parameters="tolower" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -37,67 +37,97 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="ft_bzero.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memccpy.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memchr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memcmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memcpy.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memmove.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_memset.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strcat.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strchr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strcmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strcpy.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strdup.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strlcat.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strlen.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strncat.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strncmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strncpy.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strnstr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strrchr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ft_strstr.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="libft.h" />
+		<Unit filename="part 1/Untitled2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_atoi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_bzero.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_isalnum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_isalpha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_isascii.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_isdigit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_isprint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memccpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memcmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memcpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memmove.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_memset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strcat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strcmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strcpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strdup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strlcat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strlen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strncat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strncmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strncpy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strnstr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strrchr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_strstr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_tolower.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 1/ft_toupper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_memalloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="tester.c">
 			<Option compilerVar="CC" />
 			<Option target="Release" />

@@ -31,5 +31,8 @@ int		ft_isdigit(int character);
 int		ft_isalnum(int character);
 int		ft_isascii(int character);
 int		ft_isprint(int character);
+int		ft_toupper(int character);
+int		ft_tolower(int character);
+void	*ft_memalloc(size_t amount);
 
-# endif // LIBFT_H
+# endif

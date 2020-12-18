@@ -1640,6 +1640,200 @@ void	test_ft_isprint()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_toupper()
+{
+	char TEST_NAME[] = "ft_toupper test 1.0";
+	int diff = 0;
+
+	int toupper_test0 = 96;//'`'
+	int toupper_test1 = 97;//'a'
+	int toupper_test2 = 122;//'z'
+	int toupper_test3 = 123;//'{'
+	int toupper_test4 = -1;
+	int toupper_test5 = 128;
+
+	int	return_control0 = toupper(toupper_test0);
+	int	return_control1 = toupper(toupper_test1);
+	int	return_control2 = toupper(toupper_test2);
+	int	return_control3 = toupper(toupper_test3);
+	int	return_control4 = toupper(toupper_test4);
+	int	return_control5 = toupper(toupper_test5);
+
+	int	return_test0 = ft_toupper(toupper_test0);
+	int	return_test1 = ft_toupper(toupper_test1);
+	int	return_test2 = ft_toupper(toupper_test2);
+	int	return_test3 = ft_toupper(toupper_test3);
+	int	return_test4 = ft_toupper(toupper_test4);
+	int	return_test5 = ft_toupper(toupper_test5);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (toupper)\n");
+	printf("test0: %c \n",return_control0);
+	printf("test1: %c \n",return_control1);
+	printf("test2: %c \n",return_control2);
+	printf("test3: %c \n",return_control3);
+	printf("test4: %c \n",return_control4);
+	printf("test5: %c \n\n",return_control5);
+
+	printf("ACTUAL RESULT   (ft_toupper)\n");
+	printf("test0: %c \n",return_test0);
+	printf("test1: %c \n",return_test1);
+	printf("test2: %c \n",return_test2);
+	printf("test3: %c \n",return_test3);
+	printf("test4: %c \n",return_test4);
+	printf("test5: %c \n\n",return_test5);
+
+	if(return_test0 != return_control0){
+		printf("issue detected on test 0 (\"`\")\n");
+		diff=1;}
+	if(return_test1 != return_control1){
+		printf("issue detected on test 1 (\"a\")\n");
+		diff=1;}
+	if(return_test2 != return_control2){
+		printf("issue detected on test 2 (\"z\")\n");
+		diff=1;}
+	if(return_test3 != return_control3){
+		printf("issue detected on test 3 (\"{\")\n");
+		diff=1;}
+	if(return_test4 != return_control4){
+		printf("issue detected on test 4 (\"-1\")\n");
+		diff=1;}
+	if(return_test5 != return_control5){
+		printf("issue detected on test 5 (\"128\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_tolower()
+{
+	char TEST_NAME[] = "ft_tolower test 1.0";
+	int diff = 0;
+
+	int tolower_test0 = 64;//'@'
+	int tolower_test1 = 65;//'A'
+	int tolower_test2 = 90;//'A'
+	int tolower_test3 = 91;//'['
+	int tolower_test4 = -1;
+	int tolower_test5 = 128;
+
+	int	return_control0 = tolower(tolower_test0);
+	int	return_control1 = tolower(tolower_test1);
+	int	return_control2 = tolower(tolower_test2);
+	int	return_control3 = tolower(tolower_test3);
+	int	return_control4 = tolower(tolower_test4);
+	int	return_control5 = tolower(tolower_test5);
+
+	int	return_test0 = ft_tolower(tolower_test0);
+	int	return_test1 = ft_tolower(tolower_test1);
+	int	return_test2 = ft_tolower(tolower_test2);
+	int	return_test3 = ft_tolower(tolower_test3);
+	int	return_test4 = ft_tolower(tolower_test4);
+	int	return_test5 = ft_tolower(tolower_test5);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (tolower)\n");
+	printf("test0: %c \n",return_control0);
+	printf("test1: %c \n",return_control1);
+	printf("test2: %c \n",return_control2);
+	printf("test3: %c \n",return_control3);
+	printf("test4: %c \n",return_control4);
+	printf("test5: %c \n\n",return_control5);
+
+	printf("ACTUAL RESULT   (ft_tolower)\n");
+	printf("test0: %c \n",return_test0);
+	printf("test1: %c \n",return_test1);
+	printf("test2: %c \n",return_test2);
+	printf("test3: %c \n",return_test3);
+	printf("test4: %c \n",return_test4);
+	printf("test5: %c \n\n",return_test5);
+
+	if(return_test0 != return_control0){
+		printf("issue detected on test 0 (\"`\")\n");
+		diff=1;}
+	if(return_test1 != return_control1){
+		printf("issue detected on test 1 (\"a\")\n");
+		diff=1;}
+	if(return_test2 != return_control2){
+		printf("issue detected on test 2 (\"z\")\n");
+		diff=1;}
+	if(return_test3 != return_control3){
+		printf("issue detected on test 3 (\"{\")\n");
+		diff=1;}
+	if(return_test4 != return_control4){
+		printf("issue detected on test 4 (\"-1\")\n");
+		diff=1;}
+	if(return_test5 != return_control5){
+		printf("issue detected on test 5 (\"128\")\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_memalloc()
+{
+	char TEST_NAME[] = "ft_memalloc test 1.0";
+	int diff = 0;
+
+	char	*memalloc_test0;
+	char	*memalloc_test1;
+	int		*memalloc_test2;
+	int		*memalloc_test3;
+	long	*memalloc_test4;
+	long	*memalloc_test5;
+	char	*memalloc_control0;
+	char	*memalloc_control1;
+	int		*memalloc_control2;
+	int		*memalloc_control3;
+	long	*memalloc_control4;
+	long	*memalloc_control5;
+
+	memalloc_test0 = (char *)ft_memalloc(sizeof(char));//one char check
+	memalloc_test1 = (char *)ft_memalloc(sizeof(char) * 10);//ten char check
+	memalloc_test2 = (int *)ft_memalloc(sizeof(int));//one int check
+	memalloc_test3 = (int *)ft_memalloc(sizeof(int) * 10);//ten int check
+	memalloc_test4 = (long *)ft_memalloc(sizeof(long));//one long check
+	memalloc_test5 = (long *)ft_memalloc(sizeof(long) * 10);//ten long check
+
+	memalloc_control0 = (char *)malloc(sizeof(char));//one char check
+	memalloc_control1 = (char *)malloc(sizeof(char) * 10);//ten char check
+	memalloc_control2 = (int *)malloc(sizeof(int));//one int check
+	memalloc_control3 = (int *)malloc(sizeof(int) * 10);//ten int check
+	memalloc_control4 = (long *)malloc(sizeof(long));//one long check
+	memalloc_control5 = (long *)malloc(sizeof(long) * 10);//ten long check
+
+	memset(memalloc_control0,0,sizeof(char));
+	memset(memalloc_control1,0,sizeof(char) * 10);
+	memset(memalloc_control2,0,sizeof(int));
+	memset(memalloc_control3,0,sizeof(int) * 10);
+	memset(memalloc_control4,0,sizeof(long));
+	memset(memalloc_control5,0,sizeof(long) * 10);
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (memalloc)\n");
+	printf("test 0: 0\n");
+	printf("test 1: 0\n");
+	printf("test 2: 0\n");
+	printf("test 3: 0\n");
+	printf("test 4: 0\n");
+	printf("test 5: 0\n");
+	printf("ACTUAL RESULT   (ft_memalloc)\n");
+	printf("test 0: %d\n",memcmp(memalloc_test0,memalloc_control0,sizeof(char)));
+	printf("test 1: %d\n",memcmp(memalloc_test1,memalloc_control1,(sizeof(char)*10)));
+	printf("test 2: %d\n",memcmp(memalloc_test2,memalloc_control2,sizeof(int)));
+	printf("test 3: %d\n",memcmp(memalloc_test3,memalloc_control3,(sizeof(int)*10)));
+	printf("test 4: %d\n",memcmp(memalloc_test4,memalloc_control4,sizeof(long)));
+	printf("test 5: %d\n",memcmp(memalloc_test5,memalloc_control5,(sizeof(long)*10)));
+
+	if(0){
+		printf("issue detected on test 0 (\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",89,30):standard check, nothing special\n");
+		diff = 1;}
+	if(0){
+		printf("issue detected on test 1 (\"XX\\nXX\\bXX\\vX\",89,10): special char check\n");
+		diff = 1;}
+	if(0){
+		printf("issue detected on test 2 (\"XXXXX\\0XXXX\",89,10): NULL char check\n");
+		diff = 1;}
+	if(diff==0)
+		printf("\nNo issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
@@ -1697,12 +1891,12 @@ int		main(int ac, char **av)
 			test_ft_isascii();
 		else if (strcmp(av[1], "isprint") == 0 || strcmp(av[1], "ft_isprint") == 0)
 			test_ft_isprint();
-		//else if (strcmp(av[1], "toupper") == 0 || strcmp(av[1], "ft_toupper") == 0)
-		//	test_ft_toupper();
-		//else if (strcmp(av[1], "tolower") == 0 || strcmp(av[1], "ft_tolower") == 0)
-		//	test_ft_tolower();
-		//else if (strcmp(av[1], "memalloc") == 0 || strcmp(av[1], "ft_memalloc") == 0)
-		//	test_ft_memalloc();
+		else if (strcmp(av[1], "toupper") == 0 || strcmp(av[1], "ft_toupper") == 0)
+			test_ft_toupper();
+		else if (strcmp(av[1], "tolower") == 0 || strcmp(av[1], "ft_tolower") == 0)
+			test_ft_tolower();
+		else if (strcmp(av[1], "memalloc") == 0 || strcmp(av[1], "ft_memalloc") == 0)
+			test_ft_memalloc();
 		//else if (strcmp(av[1], "memdel") == 0 || strcmp(av[1], "ft_memdel") == 0)
 		//	test_ft_memdel();
 		//else if (strcmp(av[1], "strnew") == 0 || strcmp(av[1], "ft_strnew") == 0)
