@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 /*
 *Takes string str and finds the last occurrence of char c

@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 /*
 *Takes string source and concatenates up to n chars from it

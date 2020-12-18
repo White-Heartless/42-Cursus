@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 /*
 *compares s1 and s2, up to n characters

@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 /*
 *Takes a string as input and returns a copy of the string,

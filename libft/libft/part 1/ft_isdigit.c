@@ -1,15 +1,15 @@
-#include "libft.h"
+#include "../libft.h"
 
 /*
 *extracts and integer from a string
 */
 
-int	ft_isprint(int character)
+int	ft_isdigit(int character)
 {
 	unsigned char c;
 
 	c = (unsigned char)character;
-	if (c >= 32 && c <= 126)
+	if ((c >= '0' && c <= '9'))
 		return (1);
 	else
 		return(0);

@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 // Copies characters from memory area source to
 // memory area dest until it encouters

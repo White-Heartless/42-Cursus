@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 // Fills a block of memory with the given character up to n bytes
 // ptr ==> Starting address of memory to be filled

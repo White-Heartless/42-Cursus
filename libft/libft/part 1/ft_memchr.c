@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 // Finds the first occurrence of char c, stopping after n bytes
 // str ==> Starting address of memory to be searched
