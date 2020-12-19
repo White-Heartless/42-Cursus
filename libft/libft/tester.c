@@ -1843,10 +1843,210 @@ void	test_ft_memalloc()//honestly i have no clue if this test is any good
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_memdel()
+{
+	char TEST_NAME[] = "ft_memdel test 1.0";
+	int diff = 0;
+
+	char	*memdel_test0 = (char *)malloc(sizeof(char)*10);
+	int		*memdel_test1 = (int *)malloc(sizeof(int)*10);
+	long	*memdel_test2 = (long *)malloc(sizeof(long)*10);
+	char	*memdel_control0 = (char *)malloc(sizeof(char)*10);
+	int		*memdel_control1 = (int *)malloc(sizeof(int)*10);
+	long	*memdel_control2 = (long *)malloc(sizeof(long)*10);
+
+	char	**test0ptr = &memdel_test0;
+	int		**test1ptr = &memdel_test1;
+	long	**test2ptr = &memdel_test2;
+
+	free(memdel_control0);
+	free(memdel_control1);
+	free(memdel_control2);
+	memdel_control0 = NULL;
+	memdel_control1 = NULL;//yes, i could have skipped the malloc and free
+	memdel_control2 = NULL;//and just set it to NULL from the start.
+
+	ft_memdel((void **)test0ptr);
+	ft_memdel((void **)test1ptr);
+	ft_memdel((void **)test2ptr);//testXptr needs to become a pointer to a NULL pointer
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (memdel)\n");
+	printf("test 0: %p\n",memdel_control0);
+	printf("test 1: %p\n",memdel_control1);
+	printf("test 2: %p\n\n",memdel_control2);
+	printf("ACTUAL RESULT   (ft_memdel)\n");
+	printf("test 0: %p\n",memdel_test0);
+	printf("test 1: %p\n",memdel_test1);
+	printf("test 2: %p\n\n",memdel_test2);
+
+	if(memdel_test0 != 0){
+		printf("issue detected on test 0 : ft_memdel((void **)test0ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(memdel_test1 != 0){
+		printf("issue detected on test 1 : ft_memdel((void **)test1ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(memdel_test2 != 0){
+		printf("issue detected on test 2 : ft_memdel((void **)test2ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strnew()
+{
+	char TEST_NAME[] = "ft_strnew test 1.0";
+	int diff = 0;
+
+	char *strnew_test0;
+	char *strnew_test1;
+	char *strnew_test2;
+
+	strnew_test0 = ft_strnew(0);
+	strnew_test1 = ft_strnew(1);
+	strnew_test2 = ft_strnew(42);
+
+	char *return_control0 = (char *)malloc(0);
+	char *return_control1 = (char *)malloc(1);
+	char return_control2[] = "testtest";
+
+	return_control0[0] = 0;
+	return_control1[0] = 0;
+	strnew_test2[0] = 't';
+	strnew_test2[4] = 't';
+	strnew_test2[1] = 'e';
+	strnew_test2[5] = 'e';
+	strnew_test2[2] = 's';
+	strnew_test2[6] = 's';
+	strnew_test2[3] = 't';
+	strnew_test2[7] = 't';
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strnew)\n");
+	printf("test0: %d \n",*return_control0);
+	printf("test1: %d \n",*return_control1);
+	printf("test2: %s \n",return_control2);
+
+	printf("ACTUAL RESULT   (ft_strnew)\n");
+	printf("test0: %d \n",*strnew_test0);
+	printf("test1: %d \n",*strnew_test1);
+	printf("test2: %s \n",strnew_test2);
+
+	if(strcmp(strnew_test0,return_control0) != 0){
+		printf("issue detected on test 0 (\"13 chr string\"): base test, nothing special\n");
+		diff=1;}
+	if(strcmp(strnew_test1,return_control1) != 0){
+		printf("issue detected on test 1 (\"This\\tstring\\vis\\rfull\\aof\\bspecial\\echaracters\\n\"): check if there are issues on special characters\n");
+		diff=1;}
+	if(strcmp(strnew_test2,return_control2) != 0){
+		printf("issue detected on test 2 (\"Termi\\0nate\"): NULL char check\n");
+		diff=1;}
+	if(diff==0)
+		printf("\nNo issue detected, Good Job!\n");
+}
+void	test_ft_strdel()
+{
+	char TEST_NAME[] = "ft_strdel test 1.0";
+	int diff = 0;
+
+	char	*strdel_test0 = (char *)malloc(0);
+	char	*strdel_test1 = (char *)malloc(sizeof(char));
+	char	*strdel_test2 = (char *)malloc(sizeof(char)*10);
+	char	*strdel_control0 = (char *)malloc(0);
+	char	*strdel_control1 = (char *)malloc(sizeof(char));
+	char	*strdel_control2 = (char *)malloc(sizeof(char)*10);
+
+	char	**test0ptr = &strdel_test0;
+	char	**test1ptr = &strdel_test1;
+	char	**test2ptr = &strdel_test2;
+
+	free(strdel_control0);
+	free(strdel_control1);
+	free(strdel_control2);
+	strdel_control0 = NULL;
+	strdel_control1 = NULL;//yes, i could have skipped the malloc and free
+	strdel_control2 = NULL;//and just set it to NULL from the start.
+
+	ft_strdel(test0ptr);
+	ft_strdel(test1ptr);
+	ft_strdel(test2ptr);//testXptr needs to become a pointer to a NULL pointer
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strdel)\n");
+	printf("test 0: %p\n",strdel_control0);
+	printf("test 1: %p\n",strdel_control1);
+	printf("test 2: %p\n\n",strdel_control2);
+	printf("ACTUAL RESULT   (ft_strdel)\n");
+	printf("test 0: %p\n",strdel_test0);
+	printf("test 1: %p\n",strdel_test1);
+	printf("test 2: %p\n\n",strdel_test2);
+
+	if(strdel_test0 != 0){
+		printf("issue detected on test 0 : ft_strdel((void **)test0ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(strdel_test1 != 0){
+		printf("issue detected on test 1 : ft_strdel((void **)test1ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(strdel_test2 != 0){
+		printf("issue detected on test 2 : ft_strdel((void **)test2ptr)  pointer not correctly set to 0\n");
+		diff = 1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strclr()
+{
+	char TEST_NAME[] = "ft_strclr test 1.0";
+	int diff = 0;
+
+	char strclr_test0[] = "Just a regular old string here";//standard check
+	char strclr_test1[] = "Sp\necc\bia\vl";//special char check
+	char strclr_test2[] = "Termi\0nate";//NULL char check
+	char strclr_test3[] = "";//empty check
+
+	char strclr_control0[] = "Just a regular old string here";
+	char strclr_control1[] = "Sp\necc\bia\vl";
+	char strclr_control2[] = "Termi\0nate";
+	char strclr_control3[] = "";
+
+	memset(strclr_control0,0,strlen(strclr_control0));
+	memset(strclr_control1,0,strlen(strclr_control1));
+	memset(strclr_control2,0,strlen(strclr_control2));
+	memset(strclr_control3,0,strlen(strclr_control3));
+	ft_strclr(strclr_test2);
+	ft_strclr(strclr_test0);
+	ft_strclr(strclr_test3);
+	ft_strclr(strclr_test1);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strclr)\n");
+	printf("test0: %d \n",strclr_control0[0]);
+	printf("test1: %d \n",strclr_control1[0]);
+	printf("test2: %d \n",strclr_control2[0]);
+	printf("test3: %d \n\n",strclr_control3[0]);
+	printf("ACTUAL RESULT   (ft_strclr)\n");
+	printf("test0: %d \n",strclr_test0[0]);
+	printf("test1: %d \n",strclr_test1[0]);
+	printf("test2: %d \n",strclr_test2[0]);
+	printf("test3: %d \n\n",strclr_test3[0]);
+
+	if(strclr_test0[0] != 0){
+		printf("issue detected on test 0: string not properly set to 0\n");
+		diff=1;}
+	if(strclr_test1[0] != 0){
+		printf("issue detected on test 1: string not properly set to 0\n");
+		diff=1;}
+	if(strclr_test2[0] != 0){
+		printf("issue detected on test 2: string not properly set to 0\n");
+		diff=1;}
+	if(strclr_test3[0] != 0){
+		printf("issue detected on test 3: string not properly set to 0\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
 
 int		main(int ac, char **av)
 {
-	if (ac == 2)
+	if (ac == 2)// this whole thing is probably gonna get removed or greatly reworked
 	{
 		if (strcmp(av[1], "memset") == 0 || strcmp(av[1], "ft_memset") == 0)
 			test_ft_memset();
@@ -1906,14 +2106,14 @@ int		main(int ac, char **av)
 			test_ft_tolower();
 		else if (strcmp(av[1], "memalloc") == 0 || strcmp(av[1], "ft_memalloc") == 0)
 			test_ft_memalloc();
-		//else if (strcmp(av[1], "memdel") == 0 || strcmp(av[1], "ft_memdel") == 0)
-		//	test_ft_memdel();
-		//else if (strcmp(av[1], "strnew") == 0 || strcmp(av[1], "ft_strnew") == 0)
-		//	test_ft_strnew();
-		//else if (strcmp(av[1], "strdel") == 0 || strcmp(av[1], "ft_strdel") == 0)
-		//	test_ft_strdel();
-		//else if (strcmp(av[1], "strclr") == 0 || strcmp(av[1], "ft_strclr") == 0)
-		//	test_ft_strclr();
+		else if (strcmp(av[1], "memdel") == 0 || strcmp(av[1], "ft_memdel") == 0)
+			test_ft_memdel();
+		else if (strcmp(av[1], "strnew") == 0 || strcmp(av[1], "ft_strnew") == 0)
+			test_ft_strnew();
+		else if (strcmp(av[1], "strdel") == 0 || strcmp(av[1], "ft_strdel") == 0)
+			test_ft_strdel();
+		else if (strcmp(av[1], "strclr") == 0 || strcmp(av[1], "ft_strclr") == 0)
+			test_ft_strclr();
 		//else if (strcmp(av[1], "striter") == 0 || strcmp(av[1], "ft_striter") == 0)
 		//	test_ft_striter();
 		//else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)

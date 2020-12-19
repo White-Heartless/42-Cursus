@@ -1,7 +1,8 @@
 #include "../libft.h"
 
 /*
-*extracts and integer from a string
+*allocates amount bytes of memory and returns a pointer
+*to the memory area created
 */
 
 void	*ft_memalloc(size_t amount)

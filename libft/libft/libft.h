@@ -34,5 +34,9 @@ int		ft_isprint(int character);
 int		ft_toupper(int character);
 int		ft_tolower(int character);
 void	*ft_memalloc(size_t amount);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t amount);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
 
 # endif
