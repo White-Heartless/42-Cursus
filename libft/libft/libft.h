@@ -38,5 +38,6 @@ void	ft_memdel(void **ap);
 char	*ft_strnew(size_t amount);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
 
 # endif

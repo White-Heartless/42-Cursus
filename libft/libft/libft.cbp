@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strclr" />
+				<Option parameters="striter" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -132,6 +132,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 2/ft_strdel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_striter.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 2/ft_strnew.c">

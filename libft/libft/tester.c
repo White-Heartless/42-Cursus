@@ -2043,7 +2043,80 @@ void	test_ft_strclr()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void ft_striter_f(char *c)
+{
+	*c = *c + 1;
+}
+void	test_ft_striter()//add NULL pointer input test
+{
+	char TEST_NAME[] = "ft_striter test 1.0";
+	int diff = 0;
 
+	char striter_test0[] = "Itrs`qdftk`qnkcrsqhmfgdqd";//standard check
+	char striter_test1[] = "Ro\vdb\bh``\ak";//special char check
+	char striter_test2[] = "Sdqlh\0nate";//NULL char check
+	char striter_test3[] = "";//empty check
+
+	char striter_control0[] = "Itrs`qdftk`qnkcrsqhmfgdqd";
+	char striter_control1[] = "Ro\vdb\bh``\ak";
+	char striter_control2[] = "Sdqlh\0nate";
+	char striter_control3[] = "";
+
+	void (*func_ptr)(char *); //declaring pointer to function
+	func_ptr = &ft_striter_f; //assigning pointer to function
+
+	for (int i=0;i<strlen(striter_control0);i++)
+	{
+		ft_striter_f(&striter_control0[i]);
+	}
+	ft_striter(striter_test0,func_ptr);
+	for (int i=0;i<strlen(striter_control1);i++)
+	{
+		ft_striter_f(&striter_control1[i]);
+	}
+	ft_striter(striter_test1,func_ptr);
+	for (int i=0;i<strlen(striter_control2);i++)
+	{
+		ft_striter_f(&striter_control2[i]);
+	}
+	ft_striter(striter_test2,func_ptr);
+	for (int i=0;i<strlen(striter_control3);i++)
+	{
+		ft_striter_f(&striter_control3[i]);
+	}
+	ft_striter(striter_test3,func_ptr);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (striter)\n");
+	printf("test0: %s \n",striter_control0);
+	printf("test1: %s \n",striter_control1);
+	printf("test2: %s \n",striter_control2);
+	printf("test3: %s \n\n",striter_control3);
+	printf("ACTUAL RESULT   (ft_striter)\n");
+	printf("test0: %s \n",striter_test0);
+	printf("test1: %s \n",striter_test1);
+	printf("test2: %s \n",striter_test2);
+	printf("test3: %s \n\n",striter_test3);
+
+	if(strcmp(striter_test0,striter_control0) != 0){
+		printf("issue detected on test 0: ft_striter(\"Itrs`qdftk`qnkcrsqhmfgdqd\", func_ptr) standard check\n");
+		diff=1;}
+	if(strcmp(striter_test1,striter_control1) != 0){
+		printf("issue detected on test 1: ft_striter(\"Ro\\vdb\\bh``\\ak\", func_ptr) special char check\n");
+		diff=1;}
+	if(strcmp(striter_test2,striter_control2) != 0){
+		printf("issue detected on test 2: ft_striter(\"Sdqlh\\0nate\", func_ptr) NULL char check\n");
+		diff=1;}
+	if(strcmp(striter_test3,striter_control3) != 0){
+		printf("issue detected on test 3: ft_striter(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void ft_striteri_f(unsigned int index, char *c)
+{
+	*c = *c + index;//this is just to check that the index has been passed correctly
+}
 int		main(int ac, char **av)
 {
 	if (ac == 2)// this whole thing is probably gonna get removed or greatly reworked
@@ -2114,8 +2187,8 @@ int		main(int ac, char **av)
 			test_ft_strdel();
 		else if (strcmp(av[1], "strclr") == 0 || strcmp(av[1], "ft_strclr") == 0)
 			test_ft_strclr();
-		//else if (strcmp(av[1], "striter") == 0 || strcmp(av[1], "ft_striter") == 0)
-		//	test_ft_striter();
+		else if (strcmp(av[1], "striter") == 0 || strcmp(av[1], "ft_striter") == 0)
+			test_ft_striter();
 		//else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)
 		//	test_ft_striteri();
 		//else if (strcmp(av[1], "strmap") == 0 || strcmp(av[1], "ft_strmap") == 0)
