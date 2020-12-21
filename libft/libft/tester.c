@@ -2043,7 +2043,7 @@ void	test_ft_strclr()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
-void ft_striter_f(char *c)
+void ft_striter_f(char *c)//function to be passed to striter
 {
 	*c = *c + 1;
 }
@@ -2065,22 +2065,22 @@ void	test_ft_striter()//add NULL pointer input test
 	void (*func_ptr)(char *); //declaring pointer to function
 	func_ptr = &ft_striter_f; //assigning pointer to function
 
-	for (int i=0;i<strlen(striter_control0);i++)
+	for (size_t i=0;i<strlen(striter_control0);i++)
 	{
 		ft_striter_f(&striter_control0[i]);
 	}
 	ft_striter(striter_test0,func_ptr);
-	for (int i=0;i<strlen(striter_control1);i++)
+	for (size_t i=0;i<strlen(striter_control1);i++)
 	{
 		ft_striter_f(&striter_control1[i]);
 	}
 	ft_striter(striter_test1,func_ptr);
-	for (int i=0;i<strlen(striter_control2);i++)
+	for (size_t i=0;i<strlen(striter_control2);i++)
 	{
 		ft_striter_f(&striter_control2[i]);
 	}
 	ft_striter(striter_test2,func_ptr);
-	for (int i=0;i<strlen(striter_control3);i++)
+	for (size_t i=0;i<strlen(striter_control3);i++)
 	{
 		ft_striter_f(&striter_control3[i]);
 	}
@@ -2113,10 +2113,77 @@ void	test_ft_striter()//add NULL pointer input test
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
-void ft_striteri_f(unsigned int index, char *c)
+void ft_striteri_f(unsigned int index, char *c)//function to be passed to striteri
 {
 	*c = *c + index;//this is just to check that the index has been passed correctly
 }
+void	test_ft_striteri()//add NULL pointer input test
+{
+	char TEST_NAME[] = "ft_striteri test 1.0";
+	int diff = 0;
+
+	char striteri_test0[] = "Jtqq\\k]^kaUeddaW[S";//standard check
+	char striteri_test1[] = "So\ab_d\bZd";//special char check
+	char striteri_test2[] = "Tdpjei\0ator";//NULL char check
+	char striteri_test3[] = "";//empty check
+
+	char striteri_control0[] = "Jtqq\\k]^kaUeddaW[S";
+	char striteri_control1[] = "So\ab_d\bZd";
+	char striteri_control2[] = "Tdpjei\0ator";
+	char striteri_control3[] = "";
+
+	void (*func_ptr)(unsigned int, char *); //declaring pointer to function
+	func_ptr = &ft_striteri_f; //assigning pointer to function
+
+	for (size_t i=0;i<strlen(striteri_control0);i++)
+	{
+		ft_striteri_f(i,&striteri_control0[i]);
+	}
+	ft_striteri(striteri_test0,func_ptr);
+	for (size_t i=0;i<strlen(striteri_control1);i++)
+	{
+		ft_striteri_f(i,&striteri_control1[i]);
+	}
+	ft_striteri(striteri_test1,func_ptr);
+	for (size_t i=0;i<strlen(striteri_control2);i++)
+	{
+		ft_striteri_f(i,&striteri_control2[i]);
+	}
+	ft_striteri(striteri_test2,func_ptr);
+	for (size_t i=0;i<strlen(striteri_control3);i++)
+	{
+		ft_striteri_f(i,&striteri_control3[i]);
+	}
+	ft_striteri(striteri_test3,func_ptr);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (striteri)\n");
+	printf("test0: %s \n",striteri_control0);
+	printf("test1: %s \n",striteri_control1);
+	printf("test2: %s \n",striteri_control2);
+	printf("test3: %s \n\n",striteri_control3);
+	printf("ACTUAL RESULT   (ft_striteri)\n");
+	printf("test0: %s \n",striteri_test0);
+	printf("test1: %s \n",striteri_test1);
+	printf("test2: %s \n",striteri_test2);
+	printf("test3: %s \n\n",striteri_test3);
+
+	if(strcmp(striteri_test0,striteri_control0) != 0){
+		printf("issue detected on test 0: ft_striteri(\"Jtqq\\k]^kaUeddaW[S\", func_ptr) standard check\n");
+		diff=1;}
+	if(strcmp(striteri_test1,striteri_control1) != 0){
+		printf("issue detected on test 1: ft_striteri(\"So\ab_d\bZd\", func_ptr) special char check\n");
+		diff=1;}
+	if(strcmp(striteri_test2,striteri_control2) != 0){
+		printf("issue detected on test 2: ft_striteri(\"Tdpjei\\0ator\", func_ptr) NULL char check\n");
+		diff=1;}
+	if(strcmp(striteri_test3,striteri_control3) != 0){
+		printf("issue detected on test 3: ft_striteri(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+
 int		main(int ac, char **av)
 {
 	if (ac == 2)// this whole thing is probably gonna get removed or greatly reworked
@@ -2189,8 +2256,8 @@ int		main(int ac, char **av)
 			test_ft_strclr();
 		else if (strcmp(av[1], "striter") == 0 || strcmp(av[1], "ft_striter") == 0)
 			test_ft_striter();
-		//else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)
-		//	test_ft_striteri();
+		else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)
+			test_ft_striteri();
 		//else if (strcmp(av[1], "strmap") == 0 || strcmp(av[1], "ft_strmap") == 0)
 		//	test_ft_strmap();
 		//else if (strcmp(av[1], "strmapi") == 0 || strcmp(av[1], "ft_strmapi") == 0)
