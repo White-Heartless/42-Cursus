@@ -2045,7 +2045,8 @@ void	test_ft_strclr()
 }
 void ft_striter_f(char *c)//function to be passed to striter
 {
-	*c = *c + 1;
+	if(c != NULL)
+		*c = *c + 1;
 }
 void	test_ft_striter()//add NULL pointer input test
 {
@@ -2056,11 +2057,13 @@ void	test_ft_striter()//add NULL pointer input test
 	char striter_test1[] = "Ro\vdb\bh``\ak";//special char check
 	char striter_test2[] = "Sdqlh\0nate";//NULL char check
 	char striter_test3[] = "";//empty check
+	char *striter_test4 = NULL;//NULL ptr check
 
 	char striter_control0[] = "Itrs`qdftk`qnkcrsqhmfgdqd";
 	char striter_control1[] = "Ro\vdb\bh``\ak";
 	char striter_control2[] = "Sdqlh\0nate";
 	char striter_control3[] = "";
+	char *striter_control4 = NULL;//NULL ptr check
 
 	void (*func_ptr)(char *); //declaring pointer to function
 	func_ptr = &ft_striter_f; //assigning pointer to function
@@ -2086,17 +2089,22 @@ void	test_ft_striter()//add NULL pointer input test
 	}
 	ft_striter(striter_test3,func_ptr);
 
+	ft_striter_f(striter_control4);//NULL ptr check
+	ft_striter(striter_test4,func_ptr);//NULL ptr check
+
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (striter)\n");
 	printf("test0: %s \n",striter_control0);
 	printf("test1: %s \n",striter_control1);
 	printf("test2: %s \n",striter_control2);
-	printf("test3: %s \n\n",striter_control3);
+	printf("test3: %s \n",striter_control3);
+	printf("test4: %s \n\n",striter_control4);
 	printf("ACTUAL RESULT   (ft_striter)\n");
 	printf("test0: %s \n",striter_test0);
 	printf("test1: %s \n",striter_test1);
 	printf("test2: %s \n",striter_test2);
-	printf("test3: %s \n\n",striter_test3);
+	printf("test3: %s \n",striter_test3);
+	printf("test4: %s \n\n",striter_test4);
 
 	if(strcmp(striter_test0,striter_control0) != 0){
 		printf("issue detected on test 0: ft_striter(\"Itrs`qdftk`qnkcrsqhmfgdqd\", func_ptr) standard check\n");
@@ -2109,6 +2117,9 @@ void	test_ft_striter()//add NULL pointer input test
 		diff=1;}
 	if(strcmp(striter_test3,striter_control3) != 0){
 		printf("issue detected on test 3: ft_striter(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(striter_test4 != striter_control4){
+		printf("issue detected on test 4: ft_striter(NULL, func_ptr) NULL ptr check\n");
 		diff=1;}
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
@@ -2126,11 +2137,13 @@ void	test_ft_striteri()//add NULL pointer input test
 	char striteri_test1[] = "So\ab_d\bZd";//special char check
 	char striteri_test2[] = "Tdpjei\0ator";//NULL char check
 	char striteri_test3[] = "";//empty check
+	char *striteri_test4 = NULL;//NULL ptr check
 
 	char striteri_control0[] = "Jtqq\\k]^kaUeddaW[S";
 	char striteri_control1[] = "So\ab_d\bZd";
 	char striteri_control2[] = "Tdpjei\0ator";
 	char striteri_control3[] = "";
+	char *striteri_control4 = NULL;
 
 	void (*func_ptr)(unsigned int, char *); //declaring pointer to function
 	func_ptr = &ft_striteri_f; //assigning pointer to function
@@ -2156,17 +2169,22 @@ void	test_ft_striteri()//add NULL pointer input test
 	}
 	ft_striteri(striteri_test3,func_ptr);
 
+	ft_striteri_f(0,striteri_control4);//NULL ptr check
+	ft_striteri(striteri_test4,func_ptr);//NULL ptr check
+
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (striteri)\n");
 	printf("test0: %s \n",striteri_control0);
 	printf("test1: %s \n",striteri_control1);
 	printf("test2: %s \n",striteri_control2);
-	printf("test3: %s \n\n",striteri_control3);
+	printf("test3: %s \n",striteri_control3);
+	printf("test4: %s \n\n",striteri_control4);
 	printf("ACTUAL RESULT   (ft_striteri)\n");
 	printf("test0: %s \n",striteri_test0);
 	printf("test1: %s \n",striteri_test1);
 	printf("test2: %s \n",striteri_test2);
-	printf("test3: %s \n\n",striteri_test3);
+	printf("test3: %s \n",striteri_test3);
+	printf("test4: %s \n\n",striteri_test4);
 
 	if(strcmp(striteri_test0,striteri_control0) != 0){
 		printf("issue detected on test 0: ft_striteri(\"Jtqq\\k]^kaUeddaW[S\", func_ptr) standard check\n");
@@ -2179,6 +2197,9 @@ void	test_ft_striteri()//add NULL pointer input test
 		diff=1;}
 	if(strcmp(striteri_test3,striteri_control3) != 0){
 		printf("issue detected on test 3: ft_striteri(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(striteri_test4 != striteri_control4){
+		printf("issue detected on test 4: ft_striteri(NULL, func_ptr) empty check\n");
 		diff=1;}
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
