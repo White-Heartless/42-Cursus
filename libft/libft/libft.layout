@@ -2,9 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="tester.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="part 2\ft_striter.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="27390" topLine="45" />
+			<Cursor1 position="248" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="part 1\ft_isascii.c" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="157" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="part 2\ft_striteri.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="300" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="tester.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="94326" topLine="106" />
 		</Cursor>
 		<Folding>
 			<Collapse line="8" />
@@ -221,36 +236,26 @@
 			<Collapse line="2036" />
 			<Collapse line="2039" />
 			<Collapse line="2046" />
-			<Collapse line="2050" />
-			<Collapse line="2073" />
-			<Collapse line="2078" />
-			<Collapse line="2083" />
-			<Collapse line="2100" />
-			<Collapse line="2103" />
-			<Collapse line="2106" />
-			<Collapse line="2109" />
-			<Collapse line="2116" />
-			<Collapse line="2120" />
+			<Collapse line="2051" />
+			<Collapse line="2127" />
+			<Collapse line="2131" />
+			<Collapse line="2151" />
+			<Collapse line="2156" />
+			<Collapse line="2161" />
+			<Collapse line="2166" />
+			<Collapse line="2188" />
+			<Collapse line="2191" />
+			<Collapse line="2194" />
 		</Folding>
 	</File>
-	<File name="part 2\ft_striter.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="part 2\ft_strmap.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="265" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="part 2\ft_striteri.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="186" topLine="0" />
+			<Cursor1 position="190" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="libft.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1673" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="part 1\ft_bzero.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="188" topLine="0" />
+			<Cursor1 position="1723" topLine="24" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

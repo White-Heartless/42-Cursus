@@ -2,12 +2,12 @@
 1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
 	"libft.h"
 
-1608494540 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+1608826353 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
 	<unistd.h>
 	<stdlib.h>
 	<string.h>
 
-1608820052 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
+1608826620 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\tester.c
 	"libft.h"
 	<stdio.h>
 	<ctype.h>
@@ -96,7 +96,7 @@
 1608300937 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isalnum.c
 	"../libft.h"
 
-1608300940 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isascii.c
+1608821480 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isascii.c
 	"../libft.h"
 
 1608300943 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_isalpha.c
@@ -156,7 +156,7 @@
 1608301017 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strncpy.c
 	"../libft.h"
 
-1608301020 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strnstr.c
+1608824585 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\ft_strnstr.c
 	"../libft.h"
 
 1608300695 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 1\untitled2.c
@@ -188,9 +188,18 @@
 1608408249 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_strclr.c
 	"../libft.h"
 
-1608474094 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_striter.c
+1608820608 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_striter.c
 	"../libft.h"
 
-1608494386 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_striteri.c
+1608820608 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_striteri.c
+	"../libft.h"
+
+1608822996 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_strmap.c
+	"../libft.h"
+
+1608823843 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_strmapi.c
+	"../libft.h"
+
+1608826353 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\part 2\ft_strequ.c
 	"../libft.h"
 

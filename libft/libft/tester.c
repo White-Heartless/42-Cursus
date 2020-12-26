@@ -2048,7 +2048,7 @@ void ft_striter_f(char *c)//function to be passed to striter
 	if(c != NULL)
 		*c = *c + 1;
 }
-void	test_ft_striter()//add NULL pointer input test
+void	test_ft_striter()
 {
 	char TEST_NAME[] = "ft_striter test 1.0";
 	int diff = 0;
@@ -2128,7 +2128,7 @@ void ft_striteri_f(unsigned int index, char *c)//function to be passed to strite
 {
 	*c = *c + index;//this is just to check that the index has been passed correctly
 }
-void	test_ft_striteri()//add NULL pointer input test
+void	test_ft_striteri()
 {
 	char TEST_NAME[] = "ft_striteri test 1.0";
 	int diff = 0;
@@ -2200,6 +2200,239 @@ void	test_ft_striteri()//add NULL pointer input test
 		diff=1;}
 	if(striteri_test4 != striteri_control4){
 		printf("issue detected on test 4: ft_striteri(NULL, func_ptr) empty check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+char ft_strmap_f(char c)//function to be passed to strmap
+{
+	if(c != 0)
+		return(c+1);
+	return(0);
+}
+void	test_ft_strmap()
+{
+	char TEST_NAME[] = "ft_strmap test 1.0";
+	int diff = 0;
+
+	char strmap_test0[] = "Itrs`qdftk`qnkcrsqhmfgdqd";//standard check
+	char strmap_test1[] = "Ro\vdb\bh``\ak";//special char check
+	char strmap_test2[] = "Sdqlh\0nate";//NULL char check
+	char strmap_test3[] = "";//empty check
+	char *strmap_test4 = NULL;//NULL ptr check
+
+	char strmap_control0[] = "Itrs`qdftk`qnkcrsqhmfgdqd";
+	char strmap_control1[] = "Ro\vdb\bh``\ak";
+	char strmap_control2[] = "Sdqlh\0nate";
+	char strmap_control3[] = "";
+	char *strmap_control4 = NULL;//NULL ptr check
+
+	char (*func_ptr)(char); //declaring pointer to function
+	func_ptr = &ft_strmap_f; //assigning pointer to function
+
+	for (size_t i=0;i<strlen(strmap_control0);i++)
+	{
+		strmap_control0[i] = ft_strmap_f(strmap_control0[i]);
+	}
+	char *return_test0 = ft_strmap(strmap_test0,func_ptr);
+	for (size_t i=0;i<strlen(strmap_control1);i++)
+	{
+		strmap_control1[i] = ft_strmap_f(strmap_control1[i]);
+	}
+	char *return_test1 = ft_strmap(strmap_test1,func_ptr);
+	for (size_t i=0;i<strlen(strmap_control2);i++)
+	{
+		strmap_control2[i] = ft_strmap_f(strmap_control2[i]);
+	}
+	char *return_test2 = ft_strmap(strmap_test2,func_ptr);
+	for (size_t i=0;i<strlen(strmap_control3);i++)
+	{
+		strmap_control3[i] = ft_strmap_f(strmap_control3[i]);
+	}
+	char *return_test3 = ft_strmap(strmap_test3,func_ptr);
+
+	strmap_test4 = ft_strmap(strmap_test4,func_ptr);//NULL ptr check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strmap)\n");
+	printf("test0: %s \n",strmap_control0);
+	printf("test1: %s \n",strmap_control1);
+	printf("test2: %s \n",strmap_control2);
+	printf("test3: %s \n",strmap_control3);
+	printf("test4: %s \n\n",strmap_control4);
+	printf("ACTUAL RESULT   (ft_strmap)\n");
+	printf("test0: %s \n",return_test0);
+	printf("test1: %s \n",return_test1);
+	printf("test2: %s \n",return_test2);
+	printf("test3: %s \n",return_test3);
+	printf("test4: %s \n\n",strmap_test4);
+
+	if(strcmp(return_test0,strmap_control0) != 0){
+		printf("issue detected on test 0: ft_strmap(\"Itrs`qdftk`qnkcrsqhmfgdqd\", func_ptr) standard check\n");
+		diff=1;}
+	if(strcmp(return_test1,strmap_control1) != 0){
+		printf("issue detected on test 1: ft_strmap(\"Ro\\vdb\\bh``\\ak\", func_ptr) special char check\n");
+		diff=1;}
+	if(strcmp(return_test2,strmap_control2) != 0){
+		printf("issue detected on test 2: ft_strmap(\"Sdqlh\\0nate\", func_ptr) NULL char check\n");
+		diff=1;}
+	if(strcmp(return_test3,strmap_control3) != 0){
+		printf("issue detected on test 3: ft_strmap(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(strmap_test4 != strmap_control4){
+		printf("issue detected on test 4: ft_strmap(NULL, func_ptr) NULL ptr check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+char ft_strmapi_f(unsigned int index, char c)//function to be passed to strmap
+{
+	if(c != 0)
+		return(c+index);
+	return(0);
+}
+void	test_ft_strmapi()
+{
+	char TEST_NAME[] = "ft_strmapi test 1.0";
+	int diff = 0;
+
+	char strmapi_test0[] = "Jtqq\\k]^kaUeddaW[S";//standard check
+	char strmapi_test1[] = "So\ab_d\bZd";//special char check
+	char strmapi_test2[] = "Tdpjei\0ator";//NULL char check
+	char strmapi_test3[] = "";//empty check
+	char *strmapi_test4 = NULL;//NULL ptr check
+
+	char strmapi_control0[] = "Jtqq\\k]^kaUeddaW[S";
+	char strmapi_control1[] = "So\ab_d\bZd";
+	char strmapi_control2[] = "Tdpjei\0ator";
+	char strmapi_control3[] = "";
+	char *strmapi_control4 = NULL;
+
+	char (*func_ptr)(unsigned int, char); //declaring pointer to function
+	func_ptr = &ft_strmapi_f; //assigning pointer to function
+
+	for (size_t i=0;i<strlen(strmapi_control0);i++)
+	{
+		strmapi_control0[i] = ft_strmapi_f(i,strmapi_control0[i]);
+	}
+	char *return_test0 = ft_strmapi(strmapi_test0,func_ptr);
+	for (size_t i=0;i<strlen(strmapi_control1);i++)
+	{
+		strmapi_control1[i] = ft_strmapi_f(i,strmapi_control1[i]);
+	}
+	char *return_test1 = ft_strmapi(strmapi_test1,func_ptr);
+	for (size_t i=0;i<strlen(strmapi_control2);i++)
+	{
+		strmapi_control2[i] = ft_strmapi_f(i,strmapi_control2[i]);
+	}
+	char *return_test2 = ft_strmapi(strmapi_test2,func_ptr);
+	for (size_t i=0;i<strlen(strmapi_control3);i++)
+	{
+		strmapi_control3[i] = ft_strmapi_f(i,strmapi_control3[i]);
+	}
+	char *return_test3 = ft_strmapi(strmapi_test3,func_ptr);
+
+	strmapi_test4 = ft_strmapi(strmapi_test4,func_ptr);//NULL ptr check
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strmapi)\n");
+	printf("test0: %s \n",strmapi_control0);
+	printf("test1: %s \n",strmapi_control1);
+	printf("test2: %s \n",strmapi_control2);
+	printf("test3: %s \n",strmapi_control3);
+	printf("test4: %s \n\n",strmapi_control4);
+	printf("ACTUAL RESULT   (ft_strmapi)\n");
+	printf("test0: %s \n",return_test0);
+	printf("test1: %s \n",return_test1);
+	printf("test2: %s \n",return_test2);
+	printf("test3: %s \n",return_test3);
+	printf("test4: %s \n\n",strmapi_test4);
+
+	if(strcmp(return_test0,strmapi_control0) != 0){
+		printf("issue detected on test 0: ft_strmapi(\"Jtqq\\k]^kaUeddaW[S\", func_ptr) standard check\n");
+		diff=1;}
+	if(strcmp(return_test1,strmapi_control1) != 0){
+		printf("issue detected on test 1: ft_strmapi(\"So\ab_d\bZd\", func_ptr) special char check\n");
+		diff=1;}
+	if(strcmp(return_test2,strmapi_control2) != 0){
+		printf("issue detected on test 2: ft_strmapi(\"Tdpjei\\0ator\", func_ptr) NULL char check\n");
+		diff=1;}
+	if(strcmp(return_test3,strmapi_control3) != 0){
+		printf("issue detected on test 3: ft_strmapi(\"\", func_ptr) empty check\n");
+		diff=1;}
+	if(strmapi_test4 != strmapi_control4){
+		printf("issue detected on test 4: ft_strmapi(NULL, func_ptr) empty check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strequ()
+{
+	char TEST_NAME[] = "ft_strequ test 1.0";
+	int diff = 0;
+
+	char strcmp_test0[] = "Just a regular old string here";//standard check
+	char strcmp_test1[] = "Sp\necc\bia\vl";//special char check
+	char strcmp_test2[] = "Termi\0nate";//NULL char check
+	char strcmp_test3[] = "";//empty check
+
+	char strcmp_control0[] = "Just a regular old string here";
+	char strcmp_control1[] = "Sp\necc\bia\vl";
+	char strcmp_control2[] = "Termi\0nate";
+	char strcmp_control3[] = "";
+
+	int	return_test0 = ft_strequ(strcmp_control0,strcmp_test0);
+	int	return_test1 = ft_strequ(strcmp_control1,strcmp_test1);
+	int	return_test2 = ft_strequ(strcmp_control2,strcmp_test2);
+	int	return_test3 = ft_strequ(strcmp_control3,strcmp_test3);
+	int	return_test4 = ft_strequ(strcmp_control0,strcmp_test2);
+	int	return_test5 = ft_strequ(strcmp_control1,strcmp_test0);
+	int	return_test6 = ft_strequ(strcmp_control2,strcmp_test3);
+	int	return_test7 = ft_strequ(strcmp_control3,strcmp_test1);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strequ)\n");
+	printf("test0: 1 \n");
+	printf("test1: 1 \n");
+	printf("test2: 1 \n");
+	printf("test3: 1 \n");
+	printf("test4: 0 \n");
+	printf("test5: 0 \n");
+	printf("test6: 0 \n");
+	printf("test7: 0 \n\n");//hardcoded as there
+	printf("ACTUAL RESULT   (ft_strequ)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d \n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n",return_test5);
+	printf("test6: %d \n",return_test6);
+	printf("test7: %d \n\n",return_test7);
+
+	if(1 != return_test0){
+		printf("issue detected on test 0 (\"Just a regular old string here\",\"Just a regular old string here\"): standard check, nothing special\n");
+		diff=1;}
+	if(1 != return_test1){
+		printf("issue detected on test 1 (\"Sp\\necc\\bia\\vl\",\"Sp\\necc\\bia\\vl\"): special char check\n");
+		diff=1;}
+	if(1 != return_test2){
+		printf("issue detected on test 2 (\"Termi\\0nate\",\"Termi\\0nate\"): NULL char check\n");
+		diff=1;}
+	if(1 != return_test3){
+		printf("issue detected on test 3 (\"\",\"\"): empty check\n");
+		diff=1;}
+	if(0 != return_test4){
+		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\"): diff check\n");
+		diff=1;}
+	if(0 != return_test5){
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\"): diff check\n");
+		diff=1;}
+	if(0 != return_test6){
+		printf("issue detected on test 6 (\"Termi\\0nate\",\"\"): diff check\n");
+		diff=1;}
+	if(0 !=  return_test7){
+		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\"): diff check\n");
 		diff=1;}
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
@@ -2279,12 +2512,12 @@ int		main(int ac, char **av)
 			test_ft_striter();
 		else if (strcmp(av[1], "striteri") == 0 || strcmp(av[1], "ft_striteri") == 0)
 			test_ft_striteri();
-		//else if (strcmp(av[1], "strmap") == 0 || strcmp(av[1], "ft_strmap") == 0)
-		//	test_ft_strmap();
-		//else if (strcmp(av[1], "strmapi") == 0 || strcmp(av[1], "ft_strmapi") == 0)
-		//	test_ft_strmapi();
-		//else if (strcmp(av[1], "strequ") == 0 || strcmp(av[1], "ft_strequ") == 0)
-		//	test_ft_strequ();
+		else if (strcmp(av[1], "strmap") == 0 || strcmp(av[1], "ft_strmap") == 0)
+			test_ft_strmap();
+		else if (strcmp(av[1], "strmapi") == 0 || strcmp(av[1], "ft_strmapi") == 0)
+			test_ft_strmapi();
+		else if (strcmp(av[1], "strequ") == 0 || strcmp(av[1], "ft_strequ") == 0)
+			test_ft_strequ();
 		//else if (strcmp(av[1], "strnequ") == 0 || strcmp(av[1], "ft_strnequ") == 0)
 		//	test_ft_strnequ();
 		//else if (strcmp(av[1], "strsub") == 0 || strcmp(av[1], "ft_strsub") == 0)

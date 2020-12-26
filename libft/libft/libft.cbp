@@ -140,6 +140,9 @@
 		<Unit filename="part 2/ft_striteri.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="part 2/ft_strmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="part 2/ft_strnew.c">
 			<Option compilerVar="CC" />
 		</Unit>
