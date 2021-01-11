@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="striteri" />
+				<Option parameters="strsub" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -134,6 +134,9 @@
 		<Unit filename="part 2/ft_strdel.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="part 2/ft_strequ.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="part 2/ft_striter.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -143,7 +146,16 @@
 		<Unit filename="part 2/ft_strmap.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="part 2/ft_strmapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_strnequ.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="part 2/ft_strnew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_strsub.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tester.c">

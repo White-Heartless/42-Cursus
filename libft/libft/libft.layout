@@ -2,24 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="part 2\ft_striter.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="part 1\ft_strlen.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="248" topLine="0" />
+			<Cursor1 position="135" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="part 1\ft_isascii.c" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="tester.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="157" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="part 2\ft_striteri.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="300" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="tester.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="94326" topLine="106" />
+			<Cursor1 position="24010" topLine="18" />
 		</Cursor>
 		<Folding>
 			<Collapse line="8" />
@@ -63,64 +53,59 @@
 			<Collapse line="456" />
 			<Collapse line="459" />
 			<Collapse line="462" />
-			<Collapse line="469" />
-			<Collapse line="488" />
-			<Collapse line="491" />
-			<Collapse line="494" />
-			<Collapse line="501" />
-			<Collapse line="534" />
+			<Collapse line="504" />
 			<Collapse line="537" />
 			<Collapse line="540" />
 			<Collapse line="543" />
-			<Collapse line="550" />
-			<Collapse line="576" />
+			<Collapse line="546" />
+			<Collapse line="553" />
 			<Collapse line="579" />
 			<Collapse line="582" />
-			<Collapse line="589" />
-			<Collapse line="621" />
+			<Collapse line="585" />
+			<Collapse line="592" />
 			<Collapse line="624" />
 			<Collapse line="627" />
 			<Collapse line="630" />
-			<Collapse line="637" />
-			<Collapse line="664" />
+			<Collapse line="633" />
+			<Collapse line="640" />
 			<Collapse line="667" />
 			<Collapse line="670" />
-			<Collapse line="677" />
-			<Collapse line="709" />
+			<Collapse line="673" />
+			<Collapse line="680" />
 			<Collapse line="712" />
 			<Collapse line="715" />
 			<Collapse line="718" />
-			<Collapse line="725" />
-			<Collapse line="762" />
+			<Collapse line="721" />
+			<Collapse line="728" />
 			<Collapse line="765" />
 			<Collapse line="768" />
 			<Collapse line="771" />
-			<Collapse line="778" />
-			<Collapse line="800" />
+			<Collapse line="774" />
+			<Collapse line="781" />
 			<Collapse line="803" />
 			<Collapse line="806" />
 			<Collapse line="809" />
-			<Collapse line="816" />
-			<Collapse line="838" />
+			<Collapse line="812" />
+			<Collapse line="819" />
 			<Collapse line="841" />
 			<Collapse line="844" />
 			<Collapse line="847" />
-			<Collapse line="854" />
-			<Collapse line="879" />
+			<Collapse line="850" />
+			<Collapse line="857" />
 			<Collapse line="882" />
 			<Collapse line="885" />
 			<Collapse line="888" />
 			<Collapse line="891" />
-			<Collapse line="898" />
-			<Collapse line="929" />
+			<Collapse line="894" />
+			<Collapse line="901" />
 			<Collapse line="932" />
 			<Collapse line="935" />
 			<Collapse line="938" />
 			<Collapse line="941" />
 			<Collapse line="944" />
 			<Collapse line="947" />
-			<Collapse line="954" />
-			<Collapse line="1006" />
+			<Collapse line="950" />
+			<Collapse line="957" />
 			<Collapse line="1009" />
 			<Collapse line="1012" />
 			<Collapse line="1015" />
@@ -128,8 +113,8 @@
 			<Collapse line="1021" />
 			<Collapse line="1024" />
 			<Collapse line="1027" />
-			<Collapse line="1034" />
-			<Collapse line="1086" />
+			<Collapse line="1030" />
+			<Collapse line="1037" />
 			<Collapse line="1089" />
 			<Collapse line="1092" />
 			<Collapse line="1095" />
@@ -137,8 +122,8 @@
 			<Collapse line="1101" />
 			<Collapse line="1104" />
 			<Collapse line="1107" />
-			<Collapse line="1114" />
-			<Collapse line="1176" />
+			<Collapse line="1110" />
+			<Collapse line="1117" />
 			<Collapse line="1179" />
 			<Collapse line="1182" />
 			<Collapse line="1185" />
@@ -148,8 +133,8 @@
 			<Collapse line="1197" />
 			<Collapse line="1200" />
 			<Collapse line="1203" />
-			<Collapse line="1210" />
-			<Collapse line="1272" />
+			<Collapse line="1206" />
+			<Collapse line="1213" />
 			<Collapse line="1275" />
 			<Collapse line="1278" />
 			<Collapse line="1281" />
@@ -159,8 +144,8 @@
 			<Collapse line="1293" />
 			<Collapse line="1296" />
 			<Collapse line="1299" />
-			<Collapse line="1306" />
-			<Collapse line="1368" />
+			<Collapse line="1302" />
+			<Collapse line="1309" />
 			<Collapse line="1371" />
 			<Collapse line="1374" />
 			<Collapse line="1377" />
@@ -170,8 +155,8 @@
 			<Collapse line="1389" />
 			<Collapse line="1392" />
 			<Collapse line="1395" />
-			<Collapse line="1402" />
-			<Collapse line="1475" />
+			<Collapse line="1398" />
+			<Collapse line="1405" />
 			<Collapse line="1478" />
 			<Collapse line="1481" />
 			<Collapse line="1484" />
@@ -183,79 +168,139 @@
 			<Collapse line="1502" />
 			<Collapse line="1505" />
 			<Collapse line="1508" />
-			<Collapse line="1515" />
-			<Collapse line="1557" />
+			<Collapse line="1511" />
+			<Collapse line="1518" />
 			<Collapse line="1560" />
 			<Collapse line="1563" />
 			<Collapse line="1566" />
 			<Collapse line="1569" />
 			<Collapse line="1572" />
-			<Collapse line="1579" />
-			<Collapse line="1621" />
+			<Collapse line="1575" />
+			<Collapse line="1582" />
 			<Collapse line="1624" />
 			<Collapse line="1627" />
 			<Collapse line="1630" />
 			<Collapse line="1633" />
 			<Collapse line="1636" />
-			<Collapse line="1643" />
-			<Collapse line="1685" />
+			<Collapse line="1639" />
+			<Collapse line="1646" />
 			<Collapse line="1688" />
 			<Collapse line="1691" />
 			<Collapse line="1694" />
 			<Collapse line="1697" />
 			<Collapse line="1700" />
-			<Collapse line="1707" />
-			<Collapse line="1749" />
+			<Collapse line="1703" />
+			<Collapse line="1710" />
 			<Collapse line="1752" />
 			<Collapse line="1755" />
 			<Collapse line="1758" />
 			<Collapse line="1761" />
 			<Collapse line="1764" />
-			<Collapse line="1771" />
-			<Collapse line="1824" />
+			<Collapse line="1767" />
+			<Collapse line="1774" />
 			<Collapse line="1827" />
 			<Collapse line="1830" />
 			<Collapse line="1833" />
 			<Collapse line="1836" />
 			<Collapse line="1839" />
-			<Collapse line="1846" />
-			<Collapse line="1882" />
+			<Collapse line="1842" />
+			<Collapse line="1849" />
 			<Collapse line="1885" />
 			<Collapse line="1888" />
-			<Collapse line="1895" />
-			<Collapse line="1933" />
+			<Collapse line="1891" />
+			<Collapse line="1898" />
 			<Collapse line="1936" />
 			<Collapse line="1939" />
-			<Collapse line="1946" />
-			<Collapse line="1982" />
+			<Collapse line="1942" />
+			<Collapse line="1949" />
 			<Collapse line="1985" />
 			<Collapse line="1988" />
-			<Collapse line="1995" />
-			<Collapse line="2030" />
+			<Collapse line="1991" />
+			<Collapse line="1998" />
 			<Collapse line="2033" />
 			<Collapse line="2036" />
 			<Collapse line="2039" />
-			<Collapse line="2046" />
-			<Collapse line="2051" />
-			<Collapse line="2127" />
-			<Collapse line="2131" />
-			<Collapse line="2151" />
-			<Collapse line="2156" />
-			<Collapse line="2161" />
-			<Collapse line="2166" />
-			<Collapse line="2188" />
+			<Collapse line="2042" />
+			<Collapse line="2049" />
+			<Collapse line="2054" />
+			<Collapse line="2074" />
+			<Collapse line="2079" />
+			<Collapse line="2084" />
+			<Collapse line="2089" />
+			<Collapse line="2111" />
+			<Collapse line="2114" />
+			<Collapse line="2117" />
+			<Collapse line="2120" />
+			<Collapse line="2123" />
+			<Collapse line="2130" />
+			<Collapse line="2134" />
+			<Collapse line="2154" />
+			<Collapse line="2159" />
+			<Collapse line="2164" />
+			<Collapse line="2169" />
 			<Collapse line="2191" />
 			<Collapse line="2194" />
+			<Collapse line="2197" />
+			<Collapse line="2200" />
+			<Collapse line="2203" />
+			<Collapse line="2210" />
+			<Collapse line="2216" />
+			<Collapse line="2236" />
+			<Collapse line="2241" />
+			<Collapse line="2246" />
+			<Collapse line="2251" />
+			<Collapse line="2272" />
+			<Collapse line="2275" />
+			<Collapse line="2278" />
+			<Collapse line="2281" />
+			<Collapse line="2284" />
+			<Collapse line="2291" />
+			<Collapse line="2297" />
+			<Collapse line="2317" />
+			<Collapse line="2322" />
+			<Collapse line="2327" />
+			<Collapse line="2332" />
+			<Collapse line="2353" />
+			<Collapse line="2356" />
+			<Collapse line="2359" />
+			<Collapse line="2362" />
+			<Collapse line="2365" />
+			<Collapse line="2372" />
+			<Collapse line="2415" />
+			<Collapse line="2418" />
+			<Collapse line="2421" />
+			<Collapse line="2424" />
+			<Collapse line="2427" />
+			<Collapse line="2430" />
+			<Collapse line="2433" />
+			<Collapse line="2436" />
+			<Collapse line="2443" />
+			<Collapse line="2493" />
+			<Collapse line="2496" />
+			<Collapse line="2499" />
+			<Collapse line="2502" />
+			<Collapse line="2505" />
+			<Collapse line="2508" />
+			<Collapse line="2511" />
+			<Collapse line="2514" />
+			<Collapse line="2517" />
+			<Collapse line="2520" />
+			<Collapse line="2527" />
+			<Collapse line="2574" />
+			<Collapse line="2577" />
+			<Collapse line="2580" />
+			<Collapse line="2583" />
+			<Collapse line="2586" />
+			<Collapse line="2589" />
+			<Collapse line="2592" />
+			<Collapse line="2595" />
+			<Collapse line="2603" />
+			<Collapse line="2605" />
 		</Folding>
 	</File>
-	<File name="part 2\ft_strmap.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="libft.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="190" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="libft.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1723" topLine="24" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

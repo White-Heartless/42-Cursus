@@ -474,17 +474,20 @@ void	test_ft_strlen()
 	char strlen_test0[] = "13 chr string";//standard check, nothing special
 	char strlen_test1[] = "This\tstring\vis\rfull\aof\bspecial\echaracters\n";//special char check
 	char strlen_test2[] = "";//empty string check
+	char strlen_test3[] = "ç";//empty string check
 
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (strlen)\n");
-	printf("test0: %d , ",(int)strlen(strlen_test0));
-	printf("test1: %d , ",(int)strlen(strlen_test1));
-	printf("test2: %d \n\n",(int)strlen(strlen_test2));
+	printf("test0: %d , ",strlen(strlen_test0));
+	printf("test1: %d , ",strlen(strlen_test1));
+	printf("test2: %d , ",strlen(strlen_test2));
+	printf("test3: %d \n\n",sizeof("è"));
 
 	printf("ACTUAL RESULT   (ft_strlen)\n");
 	printf("test0: %d , ",(int)ft_strlen(strlen_test0));
 	printf("test1: %d , ",(int)ft_strlen(strlen_test1));
-	printf("test2: %d \n",(int)ft_strlen(strlen_test2));
+	printf("test2: %d ,",(int)ft_strlen(strlen_test2));
+	printf("test3: %d \n",ft_strlen(strlen_test3));
 
 	if((int)strlen(strlen_test0) != (int)ft_strlen(strlen_test0)){
 		printf("issue detected on test 0 (\"13 chr string\"): base test, nothing special\n");
@@ -2399,7 +2402,7 @@ void	test_ft_strequ()
 	printf("test4: 0 \n");
 	printf("test5: 0 \n");
 	printf("test6: 0 \n");
-	printf("test7: 0 \n\n");//hardcoded as there
+	printf("test7: 0 \n\n");//hardcoded since there is no strequ function in standard c
 	printf("ACTUAL RESULT   (ft_strequ)\n");
 	printf("test0: %d \n",return_test0);
 	printf("test1: %d \n",return_test1);
@@ -2433,6 +2436,165 @@ void	test_ft_strequ()
 		diff=1;}
 	if(0 !=  return_test7){
 		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\"): diff check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strnequ()
+{
+	char TEST_NAME[] = "ft_strnequ test 1.0";
+	int diff = 0;
+
+	char strncmp_test0[] = "Just a regular old string here";//standard check
+	char strncmp_test1[] = "Sp\necc\bia\vl";//special char check
+	char strncmp_test2[] = "Termi\0nate";//NULL char check
+	char strncmp_test3[] = "";//empty check
+
+	char strncmp_control0[] = "Just a regular old string here";
+	char strncmp_control1[] = "Sp\necc\bia\vl";
+	char strncmp_control2[] = "Termi\0nate";
+	char strncmp_control3[] = "";
+	char strncmp_control4[] = "Juat a typo here";
+
+	int	return_test0 = ft_strnequ(strncmp_control0,strncmp_test0,6);
+	int	return_test1 = ft_strnequ(strncmp_control1,strncmp_test1,12);
+	int	return_test2 = ft_strnequ(strncmp_control2,strncmp_test2,8);
+	int	return_test3 = ft_strnequ(strncmp_control3,strncmp_test3,0);
+	int	return_test4 = ft_strnequ(strncmp_control0,strncmp_test2,5);
+	int	return_test5 = ft_strnequ(strncmp_control1,strncmp_test0,7);
+	int	return_test6 = ft_strnequ(strncmp_control2,strncmp_test3,4);
+	int	return_test7 = ft_strnequ(strncmp_control3,strncmp_test1,0);
+	int	return_test8 = ft_strnequ(strncmp_control4,strncmp_test0,1);
+	int	return_test9 = ft_strnequ(strncmp_control4,strncmp_test0,5);
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strnequ)\n");
+	printf("test0: 1 \n");
+	printf("test1: 1 \n");
+	printf("test2: 1 \n");
+	printf("test3: 1 \n");
+	printf("test4: 0 \n");
+	printf("test5: 0 \n");
+	printf("test6: 0 \n");
+	printf("test7: 1 \n");
+	printf("test8: 1 \n");
+	printf("test9: 0 \n\n");//hardcoded since there is no strnequ function in standard c
+	printf("ACTUAL RESULT   (ft_strnequ)\n");
+	printf("test0: %d \n",return_test0);
+	printf("test1: %d \n",return_test1);
+	printf("test2: %d \n",return_test2);
+	printf("test3: %d \n",return_test3);
+	printf("test4: %d \n",return_test4);
+	printf("test5: %d \n",return_test5);
+	printf("test6: %d \n",return_test6);
+	printf("test7: %d \n",return_test7);
+	printf("test8: %d \n",return_test8);
+	printf("test9: %d \n\n",return_test9);
+
+	if(1 != return_test0){
+		printf("issue detected on test 0 (\"Just a regular old string here\",\"Just a regular old string here\",6): standard check, nothing special\n");
+		diff=1;}
+	if(1 != return_test1){
+		printf("issue detected on test 1 (\"Sp\\necc\\bia\\vl\",\"Sp\\necc\\bia\\vl\",12): special char check\n");
+		diff=1;}
+	if(1 != return_test2){
+		printf("issue detected on test 2 (\"Termi\\0nate\",\"Termi\\0nate\",8): NULL char check\n");
+		diff=1;}
+	if(1 != return_test3){
+		printf("issue detected on test 3 (\"\",\"\",0): empty check\n");
+		diff=1;}
+	if(0 != return_test4){
+		printf("issue detected on test 4 (\"Just a regular old string here\",\"Termi\\0nate\",5): diff check\n");
+		diff=1;}
+	if(0 != return_test5){
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",\"Just a regular old string here\",7): diff check\n");
+		diff=1;}
+	if(0 != return_test6){
+		printf("issue detected on test 6 (\"Termi\\0nate\",\"\",4): diff check\n");
+		diff=1;}
+	if(1 !=  return_test7){
+		printf("issue detected on test 7 (\"\",\"Sp\\necc\\bia\\vl\",0): diff check\n");
+		diff=1;}
+	if(1 !=  return_test8){
+		printf("issue detected on test 8 (\"Just a regular old string here\",\"Juat a typo here\",2): diff check\n");
+		diff=1;}
+	if(0 !=  return_test9){
+		printf("issue detected on test 9 (\"Just a regular old string here\",\"Juat a typo here\",5): diff check\n");
+		diff=1;}
+	if(diff==0)
+		printf("No issue detected, Good Job!\n");
+}
+void	test_ft_strsub()
+{
+	char TEST_NAME[] = "ft_strsub test 1.0";
+	int diff = 0;
+
+	char strcmp_test0[] = "Just a regular old string here";
+	char strcmp_test1[] = "Sp\necc\bia\vl";
+	char strcmp_test2[] = "Termi\0nate";
+	char strcmp_test3[] = "";
+
+	char strcmp_control0[] = "Just";
+	char strcmp_control1[] = "Sp\necc";
+	char strcmp_control2[] = "Termi";
+	char strcmp_control3[] = "";
+	char strcmp_control4[] = "reg";
+	char strcmp_control5[] = "c\bia";
+	char strcmp_control6[] = "";
+	char strcmp_control7[] = "";
+
+	char *return_test0 = ft_strsub(strcmp_test0,0,4);//standard check
+	char *return_test1 = ft_strsub(strcmp_test1,0,6);//special char check
+	char *return_test2 = ft_strsub(strcmp_test2,0,8);//NULL char check
+	char *return_test3 = ft_strsub(strcmp_test3,0,0);//empty string check
+	char *return_test4 = ft_strsub(strcmp_test0,7,3);//start != 0 check
+	char *return_test5 = ft_strsub(strcmp_test1,5,4);//special char check 2
+	char *return_test6 = ft_strsub(strcmp_test2,6,4);//invalid input check
+	char *return_test7 = ft_strsub(strcmp_test3,3,2);//emptry string check 2
+
+	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
+	printf("EXPECTED RESULT (strsub)\n");
+	printf("test0: %s \n",strcmp_control0);
+	printf("test1: %s \n",strcmp_control1);
+	printf("test2: %s \n",strcmp_control2);
+	printf("test3: %s \n",strcmp_control3);
+	printf("test4: %s \n",strcmp_control4);
+	printf("test5: %s \n",strcmp_control5);
+	printf("test6: %s \n",strcmp_control6);
+	printf("test7: %s \n\n",strcmp_control7);//hardcoded since there is no strsub function in standard c
+	printf("ACTUAL RESULT   (ft_strsub)\n");
+	printf("test0: %s \n",return_test0);
+	printf("test1: %s \n",return_test1);
+	printf("test2: %s \n",return_test2);
+	printf("test3: %s \n",return_test3);
+	printf("test4: %s \n",return_test4);
+	printf("test5: %s \n",return_test5);
+	printf("test6: %s \n",return_test6);
+	printf("test7: %s \n\n",return_test7);
+
+	if(strcmp(strcmp_control0, return_test0) != 0){
+		printf("issue detected on test 0 (\"Just a regular old string here\",0,4): standard check, nothing special\n");
+		diff=1;}
+	if(strcmp(strcmp_control1, return_test1) != 0){
+		printf("issue detected on test 1 (\"Sp\\necc\\bia\\vl\",0,8): special char check\n");
+		diff=1;}
+	if(strcmp(strcmp_control2, return_test2) != 0){
+		printf("issue detected on test 2 (\"Termi\\0nate\",0,6): NULL char check\n");
+		diff=1;}
+	if(strcmp(strcmp_control3, return_test3) != 0){
+		printf("issue detected on test 3 (\"\",0,0): empty string check\n");
+		diff=1;}
+	if(strcmp(strcmp_control4, return_test4) != 0){
+		printf("issue detected on test 4 (\"Just a regular old string here\",7,3): start != 0 check\n");
+		diff=1;}
+	if(strcmp(strcmp_control5, return_test5) != 0){
+		printf("issue detected on test 5 (\"Sp\\necc\\bia\\vl\",5,4): special char check 2\n");
+		diff=1;}
+	if(strcmp(strcmp_control6, return_test6) != 0){
+		printf("issue detected on test 6 (\"Termi\\0nate\",6,4): invalid input check\n");
+		diff=1;}
+	if(strcmp(strcmp_control7, return_test7) != 0){
+		printf("issue detected on test 7 (\"\",3,2): empty string check 2\n");
 		diff=1;}
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
@@ -2518,10 +2680,10 @@ int		main(int ac, char **av)
 			test_ft_strmapi();
 		else if (strcmp(av[1], "strequ") == 0 || strcmp(av[1], "ft_strequ") == 0)
 			test_ft_strequ();
-		//else if (strcmp(av[1], "strnequ") == 0 || strcmp(av[1], "ft_strnequ") == 0)
-		//	test_ft_strnequ();
-		//else if (strcmp(av[1], "strsub") == 0 || strcmp(av[1], "ft_strsub") == 0)
-		//	test_ft_strsub();
+		else if (strcmp(av[1], "strnequ") == 0 || strcmp(av[1], "ft_strnequ") == 0)
+			test_ft_strnequ();
+		else if (strcmp(av[1], "strsub") == 0 || strcmp(av[1], "ft_strsub") == 0)
+			test_ft_strsub();
 		//else if (strcmp(av[1], "strjoin") == 0 || strcmp(av[1], "ft_strjoin") == 0)
 		//	test_ft_strjoin();
 		//else if (strcmp(av[1], "strtrim") == 0 || strcmp(av[1], "ft_strtrim") == 0)
