@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="strsub" />
+				<Option parameters="itoa" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -120,6 +120,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 1/ft_toupper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_itoa.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 2/ft_memalloc.c">

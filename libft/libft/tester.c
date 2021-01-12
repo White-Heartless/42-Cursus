@@ -1,6 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
+#include <limits.h>
 
 #define VERSION_NUMBER 2.0
 #define TEST_MODULE "libft"
@@ -2599,6 +2600,11 @@ void	test_ft_strsub()
 	if(diff==0)
 		printf("No issue detected, Good Job!\n");
 }
+void	test_ft_itoa()
+{
+	printf("%d\n",INT_MIN);
+	printf("%s\n",ft_itoa(INT_MIN));
+}
 
 int		main(int ac, char **av)
 {
@@ -2690,8 +2696,8 @@ int		main(int ac, char **av)
 		//	test_ft_strtrim();
 		//else if (strcmp(av[1], "strsplit") == 0 || strcmp(av[1], "ft_strsplit") == 0)
 		//	test_ft_strsplit();
-		//else if (strcmp(av[1], "itoa") == 0 || strcmp(av[1], "ft_itoa") == 0)
-		//	test_ft_itoa();
+		else if (strcmp(av[1], "itoa") == 0 || strcmp(av[1], "ft_itoa") == 0)
+			test_ft_itoa();
 		//else if (strcmp(av[1], "putchar") == 0 || strcmp(av[1], "ft_putchar") == 0)
 		//	test_ft_putchar();
 		//else if (strcmp(av[1], "putstr") == 0 || strcmp(av[1], "ft_putstr") == 0)
