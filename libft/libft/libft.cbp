@@ -11,7 +11,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="itoa" />
+				<Option parameters="split" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -37,6 +37,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="bonus/ft_lstadd_back.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bonus/ft_lstadd_front.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bonus/ft_lstlast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bonus/ft_lstnew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bonus/ft_lstsize.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="libft.h" />
 		<Unit filename="part 1/ft_atoi.c">
 			<Option compilerVar="CC" />
@@ -129,6 +144,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 2/ft_memdel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="part 2/ft_split.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="part 2/ft_strclr.c">

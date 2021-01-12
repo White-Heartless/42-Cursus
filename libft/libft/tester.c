@@ -475,20 +475,17 @@ void	test_ft_strlen()
 	char strlen_test0[] = "13 chr string";//standard check, nothing special
 	char strlen_test1[] = "This\tstring\vis\rfull\aof\bspecial\echaracters\n";//special char check
 	char strlen_test2[] = "";//empty string check
-	char strlen_test3[] = "ç";//empty string check
 
 	printf("HACS %.1f, %s, %s\n\n",VERSION_NUMBER,TEST_MODULE,TEST_NAME);
 	printf("EXPECTED RESULT (strlen)\n");
-	printf("test0: %d , ",strlen(strlen_test0));
-	printf("test1: %d , ",strlen(strlen_test1));
-	printf("test2: %d , ",strlen(strlen_test2));
-	printf("test3: %d \n\n",sizeof("è"));
+	printf("test0: %d , ",(int)strlen(strlen_test0));
+	printf("test1: %d , ",(int)strlen(strlen_test1));
+	printf("test2: %d , ",(int)strlen(strlen_test2));
 
 	printf("ACTUAL RESULT   (ft_strlen)\n");
 	printf("test0: %d , ",(int)ft_strlen(strlen_test0));
 	printf("test1: %d , ",(int)ft_strlen(strlen_test1));
 	printf("test2: %d ,",(int)ft_strlen(strlen_test2));
-	printf("test3: %d \n",ft_strlen(strlen_test3));
 
 	if((int)strlen(strlen_test0) != (int)ft_strlen(strlen_test0)){
 		printf("issue detected on test 0 (\"13 chr string\"): base test, nothing special\n");
@@ -2605,6 +2602,57 @@ void	test_ft_itoa()
 	printf("%d\n",INT_MIN);
 	printf("%s\n",ft_itoa(INT_MIN));
 }
+void	test_ft_split()
+{
+
+	char **a = ft_split("XabXXcXXXdefgXXh",'X');
+	int i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+
+	a = ft_split("aXbcdXXXeX",'X');
+	i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+	a = ft_split("aaaaaaaaaaaaaaaaaa",'X');
+	i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+	a = ft_split("XXXXXXXXXXXXXX",'X');
+	i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+	a = ft_split("abcXXdef",'X');
+	i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+	a = ft_split("abcXdef",'X');
+	i= 0;
+	while(a[i])
+	{
+		printf("%s\n",a[i]);
+		i++;
+	}
+}
+void	test_ft_lstnew()
+{
+
+}
 
 int		main(int ac, char **av)
 {
@@ -2694,8 +2742,8 @@ int		main(int ac, char **av)
 		//	test_ft_strjoin();
 		//else if (strcmp(av[1], "strtrim") == 0 || strcmp(av[1], "ft_strtrim") == 0)
 		//	test_ft_strtrim();
-		//else if (strcmp(av[1], "strsplit") == 0 || strcmp(av[1], "ft_strsplit") == 0)
-		//	test_ft_strsplit();
+		else if (strcmp(av[1], "split") == 0 || strcmp(av[1], "ft_split") == 0)
+			test_ft_split();
 		else if (strcmp(av[1], "itoa") == 0 || strcmp(av[1], "ft_itoa") == 0)
 			test_ft_itoa();
 		//else if (strcmp(av[1], "putchar") == 0 || strcmp(av[1], "ft_putchar") == 0)
@@ -2714,8 +2762,8 @@ int		main(int ac, char **av)
 		//	test_ft_putendl_fd();
 		//else if (strcmp(av[1], "putnbr_fd") == 0 || strcmp(av[1], "ft_putnbr_fd") == 0)
 		//	test_ft_putnbr_fd();
-		//else if (strcmp(av[1], "lstnew") == 0 || strcmp(av[1], "ft_lstnew") == 0)
-		//	test_ft_lstnew();
+		else if (strcmp(av[1], "lstnew") == 0 || strcmp(av[1], "ft_lstnew") == 0)
+			test_ft_lstnew();
 		//else if (strcmp(av[1], "lstdelone") == 0 || strcmp(av[1], "ft_lstdelone") == 0)
 		//	test_ft_lstdelone();
 		//else if (strcmp(av[1], "lstdel") == 0 || strcmp(av[1], "ft_lstdel") == 0)

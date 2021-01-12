@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct	s_list
+{
+	void *content;
+	struct s_list *next;
+}				t_list;
+
 void	*ft_memset(void *ptr, int x, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -46,5 +52,11 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
+char 	**ft_split(char const *s, char c);
+t_list	*ft_lstnew(void *content);
+void 	ft_lstadd_front(t_list **lst, t_list *new);
+int 	ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
 
 # endif
