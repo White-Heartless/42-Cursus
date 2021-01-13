@@ -2,7 +2,7 @@
 1607978248 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\ft_strlen.c
 	"libft.h"
 
-1610486995 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
+1610526267 c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\libft.h
 	<unistd.h>
 	<stdlib.h>
 	<string.h>
@@ -230,5 +230,14 @@
 	"../libft.h"
 
 1610487161 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\bonus\ft_lstadd_back.c
+	"../libft.h"
+
+1610525744 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\bonus\ft_lstdelone.c
+	"../libft.h"
+
+1610525949 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\bonus\ft_lstclear.c
+	"../libft.h"
+
+1610526060 source:c:\users\ffecd\desktop\github\42 cursus\42 cursus\libft\libft\bonus\ft_lstiter.c
 	"../libft.h"
 
